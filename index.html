@@ -1,1 +1,353 @@
-Put project photos here later. Example: electric-bike.jpg, scooter-build.jpg, circuit-lab.jpg
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sebastian Keltz | Engineering Garage</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1117;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15,17,23,.92);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      padding: 16px 24px;
+      z-index: 10;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      color: #ffd35a;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.15rem;
+    }
+    nav div a {
+      color: #b8becd;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 600;
+    }
+    nav div a:hover { color: #ffd35a; }
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 78px 24px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: center;
+      min-height: 82vh;
+    }
+    .eyebrow {
+      color: #ffd35a;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    h1 { font-size: clamp(3rem, 8vw, 6.4rem); }
+    h2 { font-size: clamp(2.25rem, 5vw, 4rem); margin-bottom: 16px; }
+    p { color: #b8becd; }
+    .lead { font-size: 1.22rem; max-width: 780px; }
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+    .btn {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+    .primary { background: #ffd35a; color: #18130a; border-color: #ffd35a; }
+    .secondary { color: #f5f5f5; background: rgba(255,255,255,.06); }
+    .hero-card, .card, .mini, .resume, .contact {
+      background: #171b25;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.3);
+    }
+    .hero-card { padding: 18px; transform: rotate(1.2deg); }
+    .placeholder {
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,.28);
+      background:
+        linear-gradient(135deg, rgba(255,211,90,.18), rgba(110,231,255,.12)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 10px, transparent 10px 20px);
+      color: #b8becd;
+      font-weight: 800;
+    }
+    .stats, .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stats div {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .stat { color: #6ee7ff; font-size: 2rem; font-weight: 900; display: block; }
+    .grid { grid-template-columns: repeat(3, 1fr); margin-top: 28px; }
+    .card { overflow: hidden; }
+    .card-img {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(255,211,90,.18), rgba(110,231,255,.12)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 10px, transparent 10px 20px);
+      color: #b8becd;
+      font-weight: 800;
+    }
+    .card-content { padding: 22px; }
+    .tag {
+      display: inline-block;
+      color: #ffd35a;
+      background: rgba(255,211,90,.12);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    ul { color: #b8becd; padding-left: 18px; }
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .mini { padding: 22px; margin-bottom: 16px; }
+    .timeline .mini { margin-bottom: 16px; }
+    .date { color: #6ee7ff; font-weight: 900; }
+    .resume { padding: 42px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 26px; }
+    .skills span {
+      color: #b8becd;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+    .contact { text-align: center; padding: 54px 24px; }
+    .contact a { color: #ffd35a; font-weight: 800; }
+    footer {
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #b8becd;
+      text-align: center;
+      padding: 28px 24px;
+    }
+    @media (max-width: 850px) {
+      .hero, .split { grid-template-columns: 1fr; }
+      .stats, .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .stats, .grid { grid-template-columns: 1fr; }
+      nav div a { display: inline-block; margin: 6px 10px 0 0; }
+      section { padding: 58px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="#home">SK Garage</a>
+      <div>
+        <a href="#projects">Projects</a>
+        <a href="#labs">Labs</a>
+        <a href="#build-log">Build Log</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div>
+        <p class="eyebrow">Electrical Engineering • UCF • Hands-on builds</p>
+        <h1>Sebastian Keltz Engineering Garage</h1>
+        <p class="lead">
+          I’m an Electrical Engineering student at UCF who learns best by building.
+          This site is where I post my class labs, circuits, CAD work, 3D prints, electric dirt bike project,
+          scooter builds, and the random engineering ideas I’m working on.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn secondary" href="#contact">Reach Out</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="placeholder">Add your best project photo here</div>
+        <p>Suggested photo: electric dirt bike, scooter build, circuit bench, or CAD model.</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><span class="stat">48V</span><p>Electric dirt bike system</p></div>
+      <div><span class="stat">2kW</span><p>BLDC motor project</p></div>
+      <div><span class="stat">CAD</span><p>Fusion 360 + 3D printing</p></div>
+      <div><span class="stat">Labs</span><p>Circuits, LTspice, oscilloscopes</p></div>
+    </section>
+
+    <section id="projects">
+      <p class="eyebrow">Stuff I built</p>
+      <h2>Featured Projects</h2>
+      <p>Real builds, prototypes, class ideas, and the “wait, why did that not work?” moments that teach the most.</p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-img">Add bike photo</div>
+          <div class="card-content">
+            <span class="tag">Power + Motors</span>
+            <h3>Electric Dirt Bike Conversion</h3>
+            <p>Converted a dirt bike to electric drive using a 48V battery, 2000W BLDC motor, motor controller, and throttle system.</p>
+            <ul>
+              <li>Power delivery and current draw</li>
+              <li>Motor controller wiring</li>
+              <li>Voltage drop and runtime planning</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">Add scooter photo</div>
+          <div class="card-content">
+            <span class="tag">CAD + Fabrication</span>
+            <h3>Scooter / Cooler Scooter Builds</h3>
+            <p>Designing, modifying, and testing scooter-related parts while figuring out what actually survives real use.</p>
+            <ul>
+              <li>Fusion 360 modeling</li>
+              <li>Measurements and fit checks</li>
+              <li>3D printed prototypes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">Add CAD screenshot</div>
+          <div class="card-content">
+            <span class="tag">Design</span>
+            <h3>CAD & 3D Printing</h3>
+            <p>Parts, brackets, holders, clamps, test pieces, and the usual version 1 almost worked engineering process.</p>
+            <ul>
+              <li>Fusion 360</li>
+              <li>3D-print-ready models</li>
+              <li>Prototype revisions</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="labs" class="split">
+      <div>
+        <p class="eyebrow">Class work that actually looks cool</p>
+        <h2>Electronics + Lab Work</h2>
+        <p>
+          I use this section to document circuits, lab setups, LTspice simulations, oscilloscope screenshots,
+          and what I learned from each experiment.
+        </p>
+      </div>
+      <div>
+        <div class="mini">
+          <h3>LTspice Simulations</h3>
+          <p>Diodes, rectifiers, transistor circuits, waveform analysis, and circuit behavior before building.</p>
+        </div>
+        <div class="mini">
+          <h3>Bench Testing</h3>
+          <p>Oscilloscopes, DMMs, function generators, breadboards, and troubleshooting actual circuit behavior.</p>
+        </div>
+        <div class="mini">
+          <h3>Lab Reports</h3>
+          <p>Photos, data, results, and short explanations written so someone outside the class can understand it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="build-log" class="timeline">
+      <p class="eyebrow">What I’m working on</p>
+      <h2>Build Log</h2>
+      <div class="mini">
+        <span class="date">Current</span>
+        <h3>Cleaning up project pages</h3>
+        <p>Adding photos, short writeups, and what I learned from each build.</p>
+      </div>
+      <div class="mini">
+        <span class="date">Next</span>
+        <h3>Upload electric dirt bike photos</h3>
+        <p>Show the motor, controller, battery, wiring, frame, and the parts that made the project work.</p>
+      </div>
+    </section>
+
+    <section id="resume" class="resume">
+      <p class="eyebrow">For recruiters and collaborators</p>
+      <h2>Resume + Skills</h2>
+      <p>
+        I’m interested in internships and projects involving electrical engineering, MEP, hardware testing,
+        embedded systems, product development, CAD, and hands-on troubleshooting.
+      </p>
+      <div class="skills">
+        <span>LTspice</span>
+        <span>MATLAB</span>
+        <span>C / C++ / C#</span>
+        <span>Fusion 360</span>
+        <span>Oscilloscopes</span>
+        <span>DMMs</span>
+        <span>Function Generators</span>
+        <span>Motor Controllers</span>
+        <span>Excel</span>
+        <span>3D Printing</span>
+      </div>
+      <a class="btn primary" href="assets/Sebastian_Keltz_Resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
+    </section>
+
+    <section id="contact" class="contact">
+      <p class="eyebrow">Jobs, projects, questions, ideas</p>
+      <h2>Reach Out</h2>
+      <p>
+        Have an internship opportunity, project idea, or question about something I built?
+        Send me a message.
+      </p>
+      <p>
+        <a href="mailto:sebastiankeltz@icloud.com">sebastiankeltz@icloud.com</a><br />
+        <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Sebastian Keltz. Built in the garage, cleaned up for the internet.
+  </footer>
+</body>
+</html>

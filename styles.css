@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sebastian Keltz | Engineering Garage</title>
+  <meta name="description" content="Electrical Engineering portfolio for Sebastian Keltz: class labs, circuits, CAD, 3D printing, scooter builds, and electric dirt bike projects." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#home">SK Garage</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#labs">Class Labs</a>
+        <a href="#build-log">Build Log</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Electrical Engineering • UCF • Hands-on builds</p>
+        <h1>Sebastian Keltz Engineering Garage</h1>
+        <p class="lead">
+          I’m an Electrical Engineering student at UCF who learns best by building.
+          This site is where I post my class labs, circuits, CAD work, 3D prints, electric dirt bike project,
+          scooter builds, and the random engineering ideas I’m working on.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">See Projects</a>
+          <a class="button secondary" href="#contact">Reach Out</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="photo-placeholder">
+          <span>Add your best project photo here</span>
+        </div>
+        <p class="caption">Suggested photo: electric dirt bike, scooter build, circuit bench, or CAD model.</p>
+      </div>
+    </section>
+
+    <section class="section quick-stats">
+      <div>
+        <span class="stat">48V</span>
+        <p>Electric dirt bike system</p>
+      </div>
+      <div>
+        <span class="stat">2kW</span>
+        <p>BLDC motor project</p>
+      </div>
+      <div>
+        <span class="stat">CAD</span>
+        <p>Fusion 360 + 3D printing</p>
+      </div>
+      <div>
+        <span class="stat">Labs</span>
+        <p>Circuits, LTspice, oscilloscopes</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Stuff I built</p>
+        <h2>Featured Projects</h2>
+        <p>Real builds, messy prototypes, class ideas, and the “wait, why did that not work?” moments that teach the most.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="project-card">
+          <div class="card-image placeholder-dark">Add bike photo</div>
+          <div class="card-content">
+            <span class="tag">Power + Motors</span>
+            <h3>Electric Dirt Bike Conversion</h3>
+            <p>Converted a dirt bike to electric drive using a 48V battery, 2000W BLDC motor, motor controller, and throttle system.</p>
+            <ul>
+              <li>Power delivery and current draw</li>
+              <li>Motor controller wiring</li>
+              <li>Voltage drop and runtime planning</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-image placeholder-dark">Add scooter photo</div>
+          <div class="card-content">
+            <span class="tag">CAD + Fabrication</span>
+            <h3>Scooter / Cooler Scooter Builds</h3>
+            <p>Designing, modifying, and testing scooter-related parts while figuring out what actually survives real use.</p>
+            <ul>
+              <li>Fusion 360 modeling</li>
+              <li>Measurements and fit checks</li>
+              <li>3D printed prototypes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-image placeholder-dark">Add CAD screenshot</div>
+          <div class="card-content">
+            <span class="tag">Design</span>
+            <h3>CAD & 3D Printing</h3>
+            <p>Parts, brackets, holders, clamps, test pieces, and the usual “version 1 almost worked” engineering process.</p>
+            <ul>
+              <li>Fusion 360</li>
+              <li>3D-print-ready models</li>
+              <li>Prototype revisions</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="labs" class="section split">
+      <div>
+        <p class="eyebrow">Class work that actually looks cool</p>
+        <h2>Electronics + Lab Work</h2>
+        <p>
+          I use this section to document circuits, lab setups, LTspice simulations, oscilloscope screenshots,
+          and what I learned from each experiment.
+        </p>
+      </div>
+      <div class="lab-list">
+        <div class="mini-card">
+          <h3>LTspice Simulations</h3>
+          <p>Diodes, rectifiers, transistor circuits, waveform analysis, and circuit behavior before building.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Bench Testing</h3>
+          <p>Oscilloscopes, DMMs, function generators, breadboards, and troubleshooting actual circuit behavior.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Lab Reports</h3>
+          <p>Photos, data, results, and short explanations written so someone outside the class can understand it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="build-log" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">What I’m working on</p>
+        <h2>Build Log</h2>
+        <p>Add quick updates here. They don’t need to be perfect — the point is to show progress.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="date">Current</span>
+          <h3>Cleaning up project pages</h3>
+          <p>Adding photos, short writeups, and what I learned from each build.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="date">Next</span>
+          <h3>Upload electric dirt bike photos</h3>
+          <p>Show the motor, controller, battery, wiring, frame, and the parts that made the project work.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="date">Later</span>
+          <h3>Make failure pages</h3>
+          <p>Document broken parts, bad measurements, wiring mistakes, and the fixes. That’s usually the best proof of learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section resume-section">
+      <div>
+        <p class="eyebrow">For recruiters and collaborators</p>
+        <h2>Resume + Skills</h2>
+        <p>
+          I’m interested in internships and projects involving electrical engineering, MEP, hardware testing,
+          embedded systems, product development, CAD, and hands-on troubleshooting.
+        </p>
+        <div class="skill-cloud">
+          <span>LTspice</span>
+          <span>MATLAB</span>
+          <span>C / C++ / C#</span>
+          <span>Fusion 360</span>
+          <span>Oscilloscopes</span>
+          <span>DMMs</span>
+          <span>Function Generators</span>
+          <span>Motor Controllers</span>
+          <span>Excel</span>
+          <span>3D Printing</span>
+        </div>
+        <a class="button primary" href="assets/Sebastian_Keltz_Resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="eyebrow">Jobs, projects, questions, ideas</p>
+      <h2>Reach Out</h2>
+      <p>
+        Have an internship opportunity, project idea, or question about something I built?
+        Send me a message.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:sebastiankeltz@icloud.com">sebastiankeltz@icloud.com</a>
+        <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Sebastian Keltz. Built in the garage, cleaned up for the internet.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

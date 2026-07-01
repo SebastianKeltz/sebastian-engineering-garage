@@ -1083,3 +1083,27 @@ ul {
     transform: none;
   }
 }
+
+.video-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #05070a;
+  object-fit: cover;
+}
+
+.video-card figcaption {
+  border-top: 1px solid var(--line);
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  font-weight: 720;
+  padding: 0.65rem 0.75rem;
+}

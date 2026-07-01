@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electric Dirt Bike Conversion case study by Sebastian Keltz, covering battery, BLDC motor, controller wiring, fitment, testing, and revisions.">
+  <title>Electric Dirt Bike Conversion | Sebastian Keltz</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav-shell" aria-label="Project navigation">
+      <a class="brand" href="../index.html#home" aria-label="Sebastian Keltz home">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">
+          <span>Sebastian Keltz</span>
+          <small>Electrical Engineering | UCF</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primary-navigation" data-nav-links>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#gallery">Gallery</a></li>
+        <li><a href="../index.html#resume">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section case-hero">
+      <div class="section-inner case-hero-grid">
+        <div class="case-hero-copy reveal">
+          <a class="back-link" href="../index.html#projects">&larr; Back to Home</a>
+          <p class="section-kicker">Project Case Study</p>
+          <h1>Electric Dirt Bike Conversion</h1>
+          <p class="hero-lede">
+            Converting a small dirt bike platform into an electric mobility project using battery power, a BLDC motor, controller wiring, mechanical fitment, and testing.
+          </p>
+          <div class="case-actions">
+            <a class="button button-primary" href="../assets/Sebastian_Keltz_Resume.pdf">View Resume</a>
+            <a class="button button-secondary" href="#testing">Testing Notes</a>
+          </div>
+        </div>
+
+        <figure class="image-slot case-hero-image reveal" data-placeholder="../assets/electric-dirt-bike-1.jpg">
+          <img src="../assets/electric-dirt-bike-1.jpg" alt="Electric dirt bike conversion overview" fetchpriority="high">
+          <figcaption>Electric dirt bike conversion overview</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section case-section">
+      <div class="section-inner case-layout">
+        <article class="case-card reveal">
+          <h2>Overview</h2>
+          <p>
+            This project focuses on converting a small dirt bike platform into an electric vehicle system. The build combines battery placement, motor/controller wiring, throttle control, mechanical mounting, and real-world testing. The goal is not just to make it move, but to understand how the electrical and mechanical systems work together.
+          </p>
+        </article>
+
+        <article class="case-card reveal">
+          <h2>Engineering Goal</h2>
+          <ul class="case-list">
+            <li>Build a functional electric dirt bike conversion.</li>
+            <li>Safely package the battery, controller, motor, and wiring.</li>
+            <li>Understand power flow from battery to controller to motor.</li>
+            <li>Test throttle response, wiring reliability, and mechanical fitment.</li>
+            <li>Improve the design through inspection, testing, and revisions.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tinted-section">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Parts + Tools</p>
+          <h2>What the build depends on.</h2>
+          <p>Costs are intentionally marked TBD until exact numbers are documented.</p>
+        </div>
+
+        <div class="case-two-column">
+          <article class="case-card reveal">
+            <h3>Materials / Parts Used</h3>
+            <div class="table-wrap">
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Role</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Dirt bike frame/platform</td><td>Base vehicle</td><td>TBD</td></tr>
+                  <tr><td>48V lithium battery</td><td>Main power source</td><td>TBD</td></tr>
+                  <tr><td>2000W BLDC motor</td><td>Drive motor</td><td>TBD</td></tr>
+                  <tr><td>BLDC motor controller</td><td>Controls motor power</td><td>TBD</td></tr>
+                  <tr><td>Throttle</td><td>Rider input</td><td>TBD</td></tr>
+                  <tr><td>Wiring/connectors</td><td>Power and signal routing</td><td>TBD</td></tr>
+                  <tr><td>Mounting hardware</td><td>Mechanical support</td><td>TBD</td></tr>
+                  <tr><td>3D printed battery case / mount parts</td><td>Packaging and protection</td><td>TBD</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <h3>Tools Used</h3>
+            <div class="skill-group">
+              <span>Fusion 360</span>
+              <span>3D Printer</span>
+              <span>Digital Multimeter</span>
+              <span>Hand Tools</span>
+              <span>Wiring/Connectors</span>
+              <span>Calipers</span>
+              <span>Electrical Testing</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Build Process</p>
+          <h2>Project timeline by phase.</h2>
+        </div>
+
+        <div class="phase-grid">
+          <article class="phase-card reveal"><span>Phase 1</span><h3>Planning and layout</h3><p>Mapped where the battery, motor, controller, wiring, and throttle needed to fit.</p></article>
+          <article class="phase-card reveal"><span>Phase 2</span><h3>Battery and motor fitment</h3><p>Checked physical placement, clearance, mounting direction, and service access.</p></article>
+          <article class="phase-card reveal"><span>Phase 3</span><h3>Controller and throttle wiring</h3><p>Connected the control path and checked how the system responded before riding.</p></article>
+          <article class="phase-card reveal"><span>Phase 4</span><h3>3D printed support parts</h3><p>Used printed parts to support packaging, protection, and fitment problems.</p></article>
+          <article class="phase-card reveal"><span>Phase 5</span><h3>First power checks</h3><p>Verified connections and watched for obvious issues before higher-load testing.</p></article>
+          <article class="phase-card reveal"><span>Phase 6</span><h3>Ride testing and revision</h3><p>Inspected wiring, mounting, and system behavior after movement and vibration.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted-section" id="testing">
+      <div class="section-inner case-two-column">
+        <article class="case-card reveal">
+          <h2>Testing and Troubleshooting</h2>
+          <ul class="case-list">
+            <li>Checked connections before power-up.</li>
+            <li>Verified battery, controller, and motor layout.</li>
+            <li>Inspected wiring after movement or vibration.</li>
+            <li>Watched for heat, loose connections, and mechanical interference.</li>
+            <li>Revised mounting and wire routing after tests.</li>
+          </ul>
+        </article>
+
+        <article class="case-card reveal">
+          <h2>What I Learned</h2>
+          <p>
+            I learned how quickly electrical design becomes a packaging and safety problem once it is placed into a moving vehicle. The battery, controller, motor, wiring, and mounts all have to work together, and small layout decisions affect serviceability, reliability, and testing.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Photo Evidence</p>
+          <h2>Major system areas.</h2>
+        </div>
+
+        <div class="case-image-grid">
+          <figure class="image-slot reveal" data-placeholder="../assets/electric-dirt-bike-battery.jpg">
+            <img src="../assets/electric-dirt-bike-battery.jpg" alt="Electric dirt bike battery layout" loading="lazy" decoding="async">
+            <figcaption>Battery layout</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="../assets/electric-dirt-bike-motor.jpg">
+            <img src="../assets/electric-dirt-bike-motor.jpg" alt="Electric dirt bike motor area" loading="lazy" decoding="async">
+            <figcaption>Motor area</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="../assets/electric-dirt-bike-controller.jpg">
+            <img src="../assets/electric-dirt-bike-controller.jpg" alt="Motor controller area" loading="lazy" decoding="async">
+            <figcaption>Controller</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="../assets/electric-dirt-bike-wiring.jpg">
+            <img src="../assets/electric-dirt-bike-wiring.jpg" alt="Electric dirt bike wiring" loading="lazy" decoding="async">
+            <figcaption>Wiring</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="../assets/about-me-project.jpg">
+            <img src="../assets/about-me-project.jpg" alt="Sebastian working on the dirt bike project" loading="lazy" decoding="async">
+            <figcaption>Build/testing work</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted-section">
+      <div class="section-inner case-two-column">
+        <article class="case-card reveal">
+          <h2>Next Improvements</h2>
+          <ul class="case-list">
+            <li>Cleaner wiring harness.</li>
+            <li>Better controller mounting.</li>
+            <li>More secure battery enclosure.</li>
+            <li>Better documentation of current draw and voltage sag.</li>
+            <li>More polished 3D printed mounts.</li>
+          </ul>
+        </article>
+
+        <article class="case-card reveal">
+          <h2>Other Case Studies</h2>
+          <div class="project-link-row">
+            <a href="cooler-scooter.html">Cooler Scooter</a>
+            <a href="cad-3d-printing.html">CAD &amp; 3D Printing</a>
+            <a href="../index.html#projects">All Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>&copy; <span data-current-year></span> Sebastian Keltz. Electrical Engineering Portfolio.</p>
+      <a href="../index.html#home">Back to home</a>
+    </div>
+  </footer>
+</body>
+</html>

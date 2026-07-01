@@ -11,6 +11,10 @@ index.html
 styles.css
 script.js
 README.md
+projects/
+  electric-dirt-bike.html
+  cooler-scooter.html
+  cad-3d-printing.html
 assets/
   README_IMAGES.txt
   Sebastian_Keltz_Resume.pdf
@@ -34,7 +38,7 @@ assets/
 
 1. Open `index.html` and search for `EDIT:` comments.
 2. Replace the contact email, LinkedIn URL, and GitHub URL near the Contact section.
-3. Replace project descriptions with your real dates, parts, measurements, and lessons learned.
+3. Edit the case study pages in `projects/` as you collect better measurements, parts, costs, and test results.
 4. Add your resume PDF at `assets/Sebastian_Keltz_Resume.pdf`.
 5. Add your photos to `assets/` using the filenames listed in `assets/README_IMAGES.txt`.
 6. Keep image files reasonably small for GitHub Pages. A good target is under 500 KB per image when possible.

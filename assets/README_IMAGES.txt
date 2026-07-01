@@ -15,6 +15,11 @@ Resume
 Sebastian_Keltz_Resume.pdf
 The resume buttons in index.html already link to this file.
 
+Reports
+-------
+assets/reports/
+Place future approved lab report PDFs here. Do not add report PDFs until they are ready and allowed to be shared publicly.
+
 Image Filenames
 ---------------
 about-me.jpg

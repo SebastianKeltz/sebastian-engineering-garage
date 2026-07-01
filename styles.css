@@ -1,215 +1,1085 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sebastian Keltz | Engineering Garage</title>
-  <meta name="description" content="Electrical Engineering portfolio for Sebastian Keltz: class labs, circuits, CAD, 3D printing, scooter builds, and electric dirt bike projects." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="#home">SK Garage</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#labs">Class Labs</a>
-        <a href="#build-log">Build Log</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+:root {
+  --bg: #07090c;
+  --bg-soft: #0c1117;
+  --surface: #10161d;
+  --surface-strong: #151d25;
+  --surface-muted: #1b242d;
+  --text: #f4f7fb;
+  --text-muted: #a8b3bf;
+  --text-soft: #d4dbe3;
+  --line: #27323d;
+  --line-strong: #394653;
+  --accent: #ffb454;
+  --accent-cyan: #55d6c2;
+  --accent-green: #9ad66d;
+  --accent-rust: #ff7043;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+  --radius: 8px;
+  --max-width: 1180px;
+}
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Electrical Engineering • UCF • Hands-on builds</p>
-        <h1>Sebastian Keltz Engineering Garage</h1>
-        <p class="lead">
-          I’m an Electrical Engineering student at UCF who learns best by building.
-          This site is where I post my class labs, circuits, CAD work, 3D prints, electric dirt bike project,
-          scooter builds, and the random engineering ideas I’m working on.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">See Projects</a>
-          <a class="button secondary" href="#contact">Reach Out</a>
-        </div>
-      </div>
+* {
+  box-sizing: border-box;
+}
 
-      <div class="hero-card">
-        <div class="photo-placeholder">
-          <span>Add your best project photo here</span>
-        </div>
-        <p class="caption">Suggested photo: electric dirt bike, scooter build, circuit bench, or CAD model.</p>
-      </div>
-    </section>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
 
-    <section class="section quick-stats">
-      <div>
-        <span class="stat">48V</span>
-        <p>Electric dirt bike system</p>
-      </div>
-      <div>
-        <span class="stat">2kW</span>
-        <p>BLDC motor project</p>
-      </div>
-      <div>
-        <span class="stat">CAD</span>
-        <p>Fusion 360 + 3D printing</p>
-      </div>
-      <div>
-        <span class="stat">Labs</span>
-        <p>Circuits, LTspice, oscilloscopes</p>
-      </div>
-    </section>
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(7, 9, 12, 0.92), rgba(7, 9, 12, 1)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0, rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 72px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 72px),
+    #07090c;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-    <section id="projects" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Stuff I built</p>
-        <h2>Featured Projects</h2>
-        <p>Real builds, messy prototypes, class ideas, and the “wait, why did that not work?” moments that teach the most.</p>
-      </div>
+body.nav-open {
+  overflow: hidden;
+}
 
-      <div class="card-grid">
-        <article class="project-card">
-          <div class="card-image placeholder-dark">Add bike photo</div>
-          <div class="card-content">
-            <span class="tag">Power + Motors</span>
-            <h3>Electric Dirt Bike Conversion</h3>
-            <p>Converted a dirt bike to electric drive using a 48V battery, 2000W BLDC motor, motor controller, and throttle system.</p>
-            <ul>
-              <li>Power delivery and current draw</li>
-              <li>Motor controller wiring</li>
-              <li>Voltage drop and runtime planning</li>
-            </ul>
-          </div>
-        </article>
+img {
+  display: block;
+  max-width: 100%;
+}
 
-        <article class="project-card">
-          <div class="card-image placeholder-dark">Add scooter photo</div>
-          <div class="card-content">
-            <span class="tag">CAD + Fabrication</span>
-            <h3>Scooter / Cooler Scooter Builds</h3>
-            <p>Designing, modifying, and testing scooter-related parts while figuring out what actually survives real use.</p>
-            <ul>
-              <li>Fusion 360 modeling</li>
-              <li>Measurements and fit checks</li>
-              <li>3D printed prototypes</li>
-            </ul>
-          </div>
-        </article>
+figure {
+  margin: 0;
+}
 
-        <article class="project-card">
-          <div class="card-image placeholder-dark">Add CAD screenshot</div>
-          <div class="card-content">
-            <span class="tag">Design</span>
-            <h3>CAD & 3D Printing</h3>
-            <p>Parts, brackets, holders, clamps, test pieces, and the usual “version 1 almost worked” engineering process.</p>
-            <ul>
-              <li>Fusion 360</li>
-              <li>3D-print-ready models</li>
-              <li>Prototype revisions</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
+button {
+  font: inherit;
+}
 
-    <section id="labs" class="section split">
-      <div>
-        <p class="eyebrow">Class work that actually looks cool</p>
-        <h2>Electronics + Lab Work</h2>
-        <p>
-          I use this section to document circuits, lab setups, LTspice simulations, oscilloscope screenshots,
-          and what I learned from each experiment.
-        </p>
-      </div>
-      <div class="lab-list">
-        <div class="mini-card">
-          <h3>LTspice Simulations</h3>
-          <p>Diodes, rectifiers, transistor circuits, waveform analysis, and circuit behavior before building.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Bench Testing</h3>
-          <p>Oscilloscopes, DMMs, function generators, breadboards, and troubleshooting actual circuit behavior.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Lab Reports</h3>
-          <p>Photos, data, results, and short explanations written so someone outside the class can understand it.</p>
-        </div>
-      </div>
-    </section>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    <section id="build-log" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">What I’m working on</p>
-        <h2>Build Log</h2>
-        <p>Add quick updates here. They don’t need to be perfect — the point is to show progress.</p>
-      </div>
+p {
+  color: var(--text-muted);
+  margin: 0;
+}
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <span class="date">Current</span>
-          <h3>Cleaning up project pages</h3>
-          <p>Adding photos, short writeups, and what I learned from each build.</p>
-        </div>
-        <div class="timeline-item">
-          <span class="date">Next</span>
-          <h3>Upload electric dirt bike photos</h3>
-          <p>Show the motor, controller, battery, wiring, frame, and the parts that made the project work.</p>
-        </div>
-        <div class="timeline-item">
-          <span class="date">Later</span>
-          <h3>Make failure pages</h3>
-          <p>Document broken parts, bad measurements, wiring mistakes, and the fixes. That’s usually the best proof of learning.</p>
-        </div>
-      </div>
-    </section>
+h1,
+h2,
+h3 {
+  color: var(--text);
+  line-height: 1.05;
+  margin: 0;
+}
 
-    <section id="resume" class="section resume-section">
-      <div>
-        <p class="eyebrow">For recruiters and collaborators</p>
-        <h2>Resume + Skills</h2>
-        <p>
-          I’m interested in internships and projects involving electrical engineering, MEP, hardware testing,
-          embedded systems, product development, CAD, and hands-on troubleshooting.
-        </p>
-        <div class="skill-cloud">
-          <span>LTspice</span>
-          <span>MATLAB</span>
-          <span>C / C++ / C#</span>
-          <span>Fusion 360</span>
-          <span>Oscilloscopes</span>
-          <span>DMMs</span>
-          <span>Function Generators</span>
-          <span>Motor Controllers</span>
-          <span>Excel</span>
-          <span>3D Printing</span>
-        </div>
-        <a class="button primary" href="assets/Sebastian_Keltz_Resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
-      </div>
-    </section>
+h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+}
 
-    <section id="contact" class="section contact">
-      <p class="eyebrow">Jobs, projects, questions, ideas</p>
-      <h2>Reach Out</h2>
-      <p>
-        Have an internship opportunity, project idea, or question about something I built?
-        Send me a message.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:sebastiankeltz@icloud.com">sebastiankeltz@icloud.com</a>
-        <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
-  </main>
+h2 {
+  font-size: 2.7rem;
+  font-weight: 760;
+}
 
-  <footer>
-    <p>© <span id="year"></span> Sebastian Keltz. Built in the garage, cleaned up for the internet.</p>
-  </footer>
+h3 {
+  font-size: 1.15rem;
+  font-weight: 720;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 9, 12, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.nav-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: min(var(--max-width), calc(100% - 32px));
+  min-height: 76px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: fit-content;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 180, 84, 0.45);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 180, 84, 0.2), rgba(85, 214, 194, 0.08)),
+    var(--surface);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.brand-text {
+  display: grid;
+  gap: 0.05rem;
+}
+
+.brand-text span {
+  font-weight: 760;
+}
+
+.brand-text small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  padding: 0.45rem 0.68rem;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a.is-active {
+  border-color: rgba(255, 180, 84, 0.24);
+  background: rgba(255, 180, 84, 0.08);
+  color: var(--text);
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.section {
+  padding: 108px 0;
+}
+
+.section-inner {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 76px 0 88px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(135deg, rgba(255, 180, 84, 0.1), transparent 34%),
+    linear-gradient(225deg, rgba(85, 214, 194, 0.09), transparent 42%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(390px, 1.05fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.eyebrow,
+.section-kicker,
+.card-kicker {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 760;
+}
+
+.hero-lede {
+  max-width: 680px;
+  color: var(--text-soft);
+  font-size: 1.28rem;
+}
+
+.hero-detail {
+  max-width: 620px;
+  font-size: 1rem;
+}
+
+.hero-actions,
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-weight: 760;
+  padding: 0.78rem 1rem;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--accent), #f08a35);
+  color: #1a1006;
+}
+
+.button-secondary {
+  border-color: rgba(85, 214, 194, 0.38);
+  background: rgba(85, 214, 194, 0.08);
+  color: var(--text);
+}
+
+.quick-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1.1rem 0 0;
+}
+
+.quick-facts div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16, 22, 29, 0.68);
+  padding: 0.9rem;
+}
+
+.quick-facts dt {
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  font-weight: 760;
+  margin: 0 0 0.2rem;
+}
+
+.quick-facts dd {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.hero-media {
+  position: relative;
+  min-height: 560px;
+}
+
+.hero-photo {
+  position: absolute;
+  box-shadow: var(--shadow);
+}
+
+.hero-photo-large {
+  inset: 44px 92px 54px 0;
+}
+
+.hero-photo-small {
+  width: 42%;
+  min-height: 180px;
+  right: 0;
+}
+
+.hero-photo-small.top {
+  top: 0;
+}
+
+.hero-photo-small.bottom {
+  bottom: 0;
+}
+
+.image-slot {
+  position: relative;
+  display: grid;
+  min-height: 240px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 180, 84, 0.13), rgba(85, 214, 194, 0.08)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 1px, transparent 14px),
+    var(--surface);
+}
+
+.image-slot::before {
+  content: "Add " attr(data-placeholder);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 1.4rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  font-weight: 720;
+  text-align: center;
+}
+
+.image-slot img {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 220ms ease, transform 260ms ease;
+}
+
+.image-slot.has-image img {
+  opacity: 1;
+}
+
+.image-slot.has-image::before {
+  opacity: 0;
+}
+
+.image-slot figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 3;
+  max-width: calc(100% - 24px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 6px;
+  background: rgba(7, 9, 12, 0.74);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 720;
+  padding: 0.35rem 0.55rem;
+  backdrop-filter: blur(10px);
+}
+
+.image-slot:hover img {
+  transform: scale(1.025);
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.75fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+.split-layout.reverse {
+  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 0.95fr);
+}
+
+.split-layout.reverse .section-copy {
+  order: 2;
+}
+
+.section-copy,
+.section-heading {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.lead {
+  color: var(--text-soft);
+  font-size: 1.18rem;
+}
+
+.portrait-slot {
+  min-height: 500px;
+}
+
+.about-highlights,
+.shortcut-row,
+.skill-cloud,
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.about-highlights span,
+.shortcut-row a,
+.skill-cloud span,
+.tag-row span {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  font-weight: 680;
+  padding: 0.42rem 0.62rem;
+}
+
+.shortcut-row {
+  margin-top: 1.25rem;
+}
+
+.shortcut-row a:hover,
+.shortcut-row a:focus-visible {
+  border-color: rgba(85, 214, 194, 0.42);
+  color: var(--text);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-card,
+.lab-card,
+.process-card,
+.reflection-card,
+.stat-card,
+.skills-panel,
+.contact-card,
+.notice {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(21, 29, 37, 0.92), rgba(16, 22, 29, 0.92));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.project-card {
+  display: grid;
+  overflow: hidden;
+}
+
+.card-media {
+  min-height: 190px;
+  border-width: 0 0 1px 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.card-body p {
+  font-size: 0.94rem;
+}
+
+.text-link {
+  color: var(--accent-cyan);
+  font-weight: 760;
+  width: fit-content;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--accent);
+}
+
+.feature-section {
+  background:
+    linear-gradient(135deg, rgba(255, 112, 67, 0.11), transparent 38%),
+    linear-gradient(45deg, rgba(154, 214, 109, 0.08), transparent 48%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.feature-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.feature-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.check-list {
+  display: grid;
+  gap: 0.7rem;
+  list-style: none;
+  margin-top: 0.4rem;
+}
+
+.check-list li {
+  position: relative;
+  color: var(--text-soft);
+  padding-left: 1.55rem;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent-green);
+  box-shadow: 0 0 0 4px rgba(154, 214, 109, 0.12);
+}
+
+.feature-stats {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.stat-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+}
+
+.stat-card span {
+  color: var(--accent-cyan);
+  font-size: 0.82rem;
+  font-weight: 760;
+}
+
+.stat-card strong {
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.media-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-media-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.tall-slot {
+  min-height: 420px;
+}
+
+.short-slot {
+  min-height: 210px;
+}
+
+.stacked-media {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-list {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.detail-list div {
+  display: grid;
+  gap: 0.18rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0.85rem 1rem;
+}
+
+.detail-list strong {
+  color: var(--text);
+}
+
+.detail-list span {
+  color: var(--text-muted);
+}
+
+.tinted-section {
+  background: rgba(255, 255, 255, 0.025);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.process-grid,
+.reflection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.process-card,
+.reflection-card,
+.lab-card {
+  display: grid;
+  gap: 0.72rem;
+  padding: 1rem;
+}
+
+.process-card span {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.two-column-media {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.two-column-media .image-slot {
+  min-height: 360px;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.compact-slot {
+  min-height: 210px;
+  margin: -1rem -1rem 0;
+  border-width: 0 0 1px 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.electronics-section {
+  background:
+    linear-gradient(90deg, rgba(85, 214, 194, 0.06), transparent 45%),
+    linear-gradient(270deg, rgba(255, 180, 84, 0.06), transparent 50%);
+}
+
+.notice {
+  display: grid;
+  gap: 0.55rem;
+  border-color: rgba(255, 180, 84, 0.35);
+  background: rgba(255, 180, 84, 0.08);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.notice h3 {
+  color: var(--accent);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 128px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 123px;
+  top: 0.48rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 0 6px rgba(85, 214, 194, 0.12);
+}
+
+.timeline-date {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.timeline-item div {
+  display: grid;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16, 22, 29, 0.78);
+  padding: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 230px;
+  gap: 1rem;
+}
+
+.gallery-item {
+  min-height: 100%;
+}
+
+.gallery-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.resume-section {
+  background:
+    linear-gradient(135deg, rgba(255, 180, 84, 0.09), transparent 42%),
+    rgba(255, 255, 255, 0.015);
+}
+
+.resume-layout,
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.skills-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+}
+
+.skill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.skill-group span {
+  border: 1px solid rgba(85, 214, 194, 0.24);
+  border-radius: 6px;
+  background: rgba(85, 214, 194, 0.07);
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.42rem 0.62rem;
+}
+
+.contact-card {
+  display: grid;
+  overflow: hidden;
+}
+
+.contact-card a {
+  display: grid;
+  gap: 0.2rem;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem;
+  transition: background 180ms ease;
+}
+
+.contact-card a:last-child {
+  border-bottom: 0;
+}
+
+.contact-card a:hover,
+.contact-card a:focus-visible {
+  background: rgba(255, 180, 84, 0.07);
+}
+
+.contact-card span {
+  color: var(--accent-cyan);
+  font-size: 0.86rem;
+  font-weight: 760;
+}
+
+.contact-card strong {
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #05070a;
+  padding: 1.35rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-inner a {
+  color: var(--accent-cyan);
+  font-weight: 760;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 3.7rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .hero-grid,
+  .split-layout,
+  .split-layout.reverse,
+  .feature-layout,
+  .resume-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .split-layout.reverse .section-copy {
+    order: 0;
+  }
+
+  .hero-media {
+    min-height: 500px;
+  }
+
+  .project-grid,
+  .feature-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .nav-toggle {
+    display: grid;
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: calc(100% + 10px);
+    display: grid;
+    gap: 0.4rem;
+    max-height: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(11, 16, 22, 0.98);
+    box-shadow: var(--shadow);
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 220ms ease, opacity 180ms ease, padding 180ms ease;
+  }
+
+  .nav-open .nav-links {
+    max-height: 620px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0.7rem;
+  }
+
+  .nav-links a {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .section {
+    padding: 82px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
+  .hero-media {
+    min-height: auto;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hero-photo,
+  .hero-photo-large,
+  .hero-photo-small,
+  .hero-photo-small.top,
+  .hero-photo-small.bottom {
+    position: relative;
+    inset: auto;
+    width: auto;
+    min-height: 260px;
+  }
+
+  .quick-facts,
+  .process-grid,
+  .reflection-grid,
+  .lab-grid,
+  .two-column-media {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 210px;
+  }
+
+  .gallery-feature {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    left: 3px;
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+
+  .hero-lede {
+    font-size: 1.1rem;
+  }
+
+  .hero-actions,
+  .resume-actions {
+    display: grid;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .quick-facts,
+  .project-grid,
+  .feature-media-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-feature {
+    grid-column: span 1;
+  }
+
+  .portrait-slot,
+  .tall-slot {
+    min-height: 340px;
+  }
+
+  .footer-inner {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

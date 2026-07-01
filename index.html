@@ -1,745 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sebastian Keltz - Electrical Engineering student at UCF. Hands-on portfolio featuring electric vehicle conversions, circuits, CAD, 3D printing, class labs, and build logs.">
   <title>Sebastian Keltz | Electrical Engineering Portfolio</title>
-  <meta name="description" content="Sebastian Keltz engineering portfolio: electrical engineering projects, class labs, CAD, 3D printing, electric dirt bike, scooter builds, and hands-on technical work." />
-
-  <style>
-    /* =========================================================
-       SEBASTIAN KELTZ ENGINEERING PORTFOLIO
-       Main edit areas:
-       - Home text: look for section id="home"
-       - About Me: look for section id="about"
-       - Project cards: look for section id="projects"
-       - Resume file: assets/Sebastian_Keltz_Resume.pdf
-       - Photos: upload images to the assets folder
-       ========================================================= */
-
-    * { box-sizing: border-box; }
-
-    :root {
-      --bg: #090b10;
-      --bg-2: #0f1117;
-      --panel: #151a24;
-      --text: #f6f7fb;
-      --muted: #b8c0cf;
-      --soft: #8792a5;
-      --line: rgba(255,255,255,.12);
-      --yellow: #ffd35a;
-      --cyan: #6ee7ff;
-      --green: #87f5a3;
-      --shadow: 0 25px 70px rgba(0,0,0,.35);
-      --radius: 24px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(255, 211, 90, .18), transparent 32rem),
-        radial-gradient(circle at 85% 5%, rgba(110, 231, 255, .14), transparent 34rem),
-        linear-gradient(180deg, var(--bg), var(--bg-2) 40%, var(--bg));
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a { color: inherit; }
-
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 18px;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9, 11, 16, .86);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 14px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-weight: 900;
-      color: var(--yellow);
-      text-decoration: none;
-      letter-spacing: -.03em;
-      font-size: 1.15rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: .94rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover { color: var(--yellow); }
-
-    section {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 86px 22px;
-    }
-
-    .eyebrow {
-      color: var(--yellow);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-weight: 900;
-      font-size: .76rem;
-      margin: 0 0 10px;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      letter-spacing: -.045em;
-      line-height: 1.05;
-    }
-
-    h1 { font-size: clamp(3.1rem, 8vw, 6.9rem); }
-    h2 { font-size: clamp(2.2rem, 5vw, 4.2rem); margin-bottom: 14px; }
-    h3 { font-size: 1.35rem; }
-    p { color: var(--muted); margin: 12px 0; }
-
-    .hero {
-      min-height: 84vh;
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(290px, .88fr);
-      gap: 42px;
-      align-items: center;
-      padding-top: 72px;
-    }
-
-    .lead { font-size: 1.22rem; max-width: 780px; }
-
-    .button-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 900;
-      border: 1px solid var(--line);
-      transition: transform .16s ease, border-color .16s ease, background .16s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn.primary { color: #171101; background: var(--yellow); border-color: var(--yellow); }
-    .btn.secondary { color: var(--text); background: rgba(255,255,255,.06); }
-
-    .hero-visual, .panel {
-      background: rgba(21, 26, 36, .86);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-visual { padding: 18px; transform: rotate(1deg); }
-
-    .photo-placeholder {
-      min-height: 320px;
-      border-radius: 18px;
-      border: 1px dashed rgba(255,255,255,.26);
-      background:
-        linear-gradient(135deg, rgba(255,211,90,.17), rgba(110,231,255,.11)),
-        repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 10px, transparent 10px 20px);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 22px;
-      color: var(--muted);
-      font-weight: 900;
-    }
-
-    .caption, .edit-note {
-      color: var(--soft);
-      font-size: .92rem;
-    }
-
-    .section-intro {
-      max-width: 790px;
-      margin-bottom: 28px;
-    }
-
-    .stats {
-      padding-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .stat-card {
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .stat-card strong {
-      display: block;
-      color: var(--cyan);
-      font-size: 2rem;
-      line-height: 1;
-      letter-spacing: -.05em;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .86fr 1.14fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .about-copy, .mini, .resume-card, .contact-card { padding: 28px; }
-
-    .about-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .about-list div {
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .about-list strong { color: var(--text); display: block; }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .project-card {
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-image {
-      min-height: 190px;
-      border-radius: 0;
-      border-left: 0;
-      border-right: 0;
-      border-top: 0;
-    }
-
-    .project-body {
-      padding: 22px;
-      flex: 1;
-    }
-
-    .tag {
-      display: inline-block;
-      color: var(--yellow);
-      background: rgba(255,211,90,.12);
-      border: 1px solid rgba(255,211,90,.22);
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: .76rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    .tag.cyan { color: var(--cyan); background: rgba(110,231,255,.11); border-color: rgba(110,231,255,.22); }
-    .tag.green { color: var(--green); background: rgba(135,245,163,.10); border-color: rgba(135,245,163,.22); }
-
-    ul { color: var(--muted); padding-left: 18px; margin-bottom: 0; }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .gallery-item {
-      min-height: 160px;
-      border-radius: 18px;
-      align-content: end;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .mini-list, .timeline { display: grid; gap: 14px; }
-
-    .coursework-warning {
-      border-left: 4px solid var(--yellow);
-      padding: 18px 20px;
-      background: rgba(255,211,90,.08);
-      border-radius: 18px;
-      margin-top: 18px;
-      color: var(--muted);
-    }
-
-    .date {
-      color: var(--cyan);
-      font-weight: 900;
-      font-size: .9rem;
-    }
-
-    .skill-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 22px 0 26px;
-    }
-
-    .skill-cloud span {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      border-radius: 999px;
-      padding: 8px 12px;
-      color: var(--muted);
-      font-size: .95rem;
-      font-weight: 700;
-    }
-
-    .contact-card { text-align: center; padding: 50px 22px; }
-
-    .contact-links {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .contact-links a { color: var(--yellow); font-weight: 900; }
-
-    .edit-note {
-      border-top: 1px solid var(--line);
-      margin-top: 18px;
-      padding-top: 14px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      color: var(--soft);
-      text-align: center;
-      padding: 28px 22px;
-    }
-
-    @media (max-width: 930px) {
-      .hero, .about-grid, .split { grid-template-columns: 1fr; }
-      .stats, .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 560px) {
-      section { padding: 58px 16px; }
-      .nav { align-items: flex-start; }
-      .nav-links { gap: 10px; }
-      .stats, .project-grid, .gallery-grid, .about-list { grid-template-columns: 1fr; }
-      .hero-visual { transform: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-  <!-- ===================== TOP NAVIGATION ===================== -->
-  <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="#home">SK Engineering Garage</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#labs">Labs</a>
-        <a href="#coursework">Coursework</a>
-        <a href="#build-log">Build Log</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <!--
+    Sebastian Keltz Portfolio
+    EDITING GUIDE:
+    1. Change text directly in this HTML file.
+    2. Put photos and your resume PDF inside the assets folder.
+    3. Image placeholders use the exact filenames in assets/README_IMAGES.txt.
+    4. Resume buttons point to assets/Sebastian_Keltz_Resume.pdf.
+  -->
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Sebastian Keltz home">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">
+          <span>Sebastian Keltz</span>
+          <small>Electrical Engineering | UCF</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primary-navigation" data-nav-links>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#electric-dirt-bike">Dirt Bike</a></li>
+        <li><a href="#class-labs">Labs</a></li>
+        <li><a href="#build-log">Build Log</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- ===================== HOME / FIRST IMPRESSION ===================== -->
-    <section id="home" class="hero">
-      <div>
-        <p class="eyebrow">Electrical Engineering • UCF • Hands-on projects</p>
-        <h1>Sebastian Keltz</h1>
-        <p class="lead">
-          Electrical Engineering student at UCF building electric vehicles, circuits, CAD models,
-          3D prints, and lab projects. This site documents what I build, break, fix, test, and learn.
-        </p>
-        <div class="button-row">
-          <a class="btn primary" href="#projects">Explore Projects</a>
-          <a class="btn secondary" href="#resume">View Resume</a>
-          <a class="btn secondary" href="#contact">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <!-- PHOTO OPTION:
-             Upload a photo called about-me.jpg to the assets folder.
-             Then replace the placeholder div below with:
-             <img src="assets/about-me.jpg" alt="Sebastian Keltz working on an engineering project">
-        -->
-        <div class="photo-placeholder">Add a photo of yourself working on a project</div>
-        <p class="caption">Best photo idea: you working on the dirt bike, a lab bench, CAD, or a clean project photo.</p>
-      </div>
-    </section>
-
-    <!-- ===================== QUICK HIGHLIGHT STATS ===================== -->
-    <section class="stats" aria-label="Quick engineering highlights">
-      <div class="stat-card">
-        <strong>UCF</strong>
-        <p>Electrical Engineering</p>
-      </div>
-      <div class="stat-card">
-        <strong>48V</strong>
-        <p>Electric dirt bike system</p>
-      </div>
-      <div class="stat-card">
-        <strong>2kW</strong>
-        <p>BLDC motor project</p>
-      </div>
-      <div class="stat-card">
-        <strong>CAD</strong>
-        <p>Fusion 360 + 3D printing</p>
-      </div>
-    </section>
-
-    <!-- ===================== ABOUT ME ===================== -->
-    <section id="about">
-      <div class="section-intro">
-        <p class="eyebrow">About me</p>
-        <h2>Learning by building, testing, and fixing.</h2>
-        <p>
-          I learn best when I can turn an idea into something physical, test it, and improve it.
-          My goal is to use this site as a living portfolio for class labs, hands-on builds, CAD projects,
-          electrical work, and the lessons that come from real troubleshooting.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <div class="panel">
-          <!-- PHOTO OPTION:
-               Upload a photo named about-me-2.jpg and replace this div with:
-               <img src="assets/about-me-2.jpg" alt="Sebastian working on a project">
-          -->
-          <div class="photo-placeholder">Add another photo of you here</div>
-        </div>
-
-        <div class="panel about-copy">
-          <h3>What this site is for</h3>
-          <p>
-            This portfolio is meant to show more than a resume can: real photos, class labs,
-            prototypes, wiring, CAD screenshots, build notes, failures, fixes, and the process behind the final result.
+  <main id="main">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="section-inner hero-grid">
+        <div class="hero-copy reveal">
+          <!-- EDIT: Update this intro as your experience and goals change. -->
+          <p class="eyebrow">Hands-on electrical engineering portfolio</p>
+          <h1 id="hero-title">Sebastian Keltz</h1>
+          <p class="hero-lede">
+            Electrical Engineering student at the University of Central Florida building real hardware across electric mobility, power systems, circuits, CAD, 3D printing, and lab testing.
+          </p>
+          <p class="hero-detail">
+            I learn by building, testing, breaking, fixing, and documenting projects that connect theory to real electrical and mechanical systems.
           </p>
 
-          <div class="about-list">
-            <div>
-              <strong>What I like</strong>
-              <p>Circuits, motors, CAD, 3D printing, testing, and hands-on problem solving.</p>
-            </div>
-            <div>
-              <strong>How I learn</strong>
-              <p>Build it, measure it, break it, fix it, document it, and improve the next version.</p>
-            </div>
-            <div>
-              <strong>Career interests</strong>
-              <p>Electrical engineering, MEP, hardware testing, embedded systems, product development, and power.</p>
-            </div>
-            <div>
-              <strong>Current focus</strong>
-              <p>Using school labs and outside projects to build a stronger engineering portfolio.</p>
-            </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#electric-dirt-bike">View Featured Build</a>
+            <!-- EDIT RESUME: Replace assets/Sebastian_Keltz_Resume.pdf with your current PDF using the same filename. -->
+            <a class="button button-secondary" href="assets/Sebastian_Keltz_Resume.pdf">Open Resume</a>
           </div>
+
+          <dl class="quick-facts" aria-label="Portfolio highlights">
+            <div>
+              <dt>Focus</dt>
+              <dd>Power, hardware, testing</dd>
+            </div>
+            <div>
+              <dt>Featured</dt>
+              <dd>48V electric dirt bike</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>Fusion 360, LTspice, scopes</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-media reveal" aria-label="Featured project photo preview">
+          <!-- PHOTO: Upload assets/electric-dirt-bike-1.jpg and this slot will show it automatically. -->
+          <figure class="image-slot hero-photo hero-photo-large" data-placeholder="assets/electric-dirt-bike-1.jpg">
+            <img src="assets/electric-dirt-bike-1.jpg" alt="Electric dirt bike conversion build" fetchpriority="high">
+            <figcaption>Electric Dirt Bike Conversion</figcaption>
+          </figure>
+
+          <!-- PHOTO: Upload assets/about-me-project.jpg for a garage or project work photo. -->
+          <figure class="image-slot hero-photo hero-photo-small top" data-placeholder="assets/about-me-project.jpg">
+            <img src="assets/about-me-project.jpg" alt="Sebastian working on a hands-on engineering project" loading="lazy" decoding="async">
+            <figcaption>Build Testing</figcaption>
+          </figure>
+
+          <!-- PHOTO: Upload assets/oscilloscope-1.jpg for a lab or measurement photo. -->
+          <figure class="image-slot hero-photo hero-photo-small bottom" data-placeholder="assets/oscilloscope-1.jpg">
+            <img src="assets/oscilloscope-1.jpg" alt="Oscilloscope measurement from an electronics lab" loading="lazy" decoding="async">
+            <figcaption>Lab Measurements</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== FEATURED PROJECTS ===================== -->
-    <section id="projects">
-      <div class="section-intro">
-        <p class="eyebrow">Projects</p>
-        <h2>Featured builds and experiments.</h2>
-        <p>
-          These are the projects that show what I’m learning outside the classroom and how I apply engineering concepts in real life.
-        </p>
-      </div>
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="section-inner split-layout">
+        <div class="section-copy reveal">
+          <!-- EDIT: Personalize this section with your current year, interests, internships, and goals. -->
+          <p class="section-kicker">About Me</p>
+          <h2 id="about-title">Electrical engineering with a garage-built backbone.</h2>
+          <p>
+            I am an Electrical Engineering student at UCF with a strong interest in practical hardware, power delivery, embedded systems, and the testing work that turns an idea into a functioning build. My best projects usually start with a real problem, a messy workbench, and a willingness to measure what is actually happening instead of guessing.
+          </p>
+          <p>
+            This portfolio highlights my strongest hands-on work: an electric dirt bike conversion, scooter and cooler scooter builds, CAD models, 3D printed prototypes, circuit labs, LTspice simulations, oscilloscope measurements, and notes from coursework that connect class concepts to real systems.
+          </p>
+          <div class="about-highlights" aria-label="Working style">
+            <span>Build first, document clearly</span>
+            <span>Test with real measurements</span>
+            <span>Improve through iteration</span>
+          </div>
+        </div>
 
-      <div class="project-grid">
-        <article class="panel project-card">
-          <!-- IMAGE OPTION:
-               Upload electric-dirt-bike-1.jpg, then replace this div with:
-               <img class="project-image" src="assets/electric-dirt-bike-1.jpg" alt="Electric dirt bike conversion">
-          -->
-          <div class="photo-placeholder project-image">Add dirt bike photo</div>
-          <div class="project-body">
-            <span class="tag">Power + Motors</span>
-            <h3>Electric Dirt Bike Conversion</h3>
-            <p>
-              Converted a dirt bike to electric drive using a 48V lithium battery, 2000W BLDC motor,
-              motor controller, and throttle system.
+        <!-- PHOTO: Upload assets/about-me.jpg for a professional project/workshop photo. -->
+        <figure class="image-slot portrait-slot reveal" data-placeholder="assets/about-me.jpg">
+          <img src="assets/about-me.jpg" alt="Sebastian Keltz in a project or engineering workspace" loading="lazy" decoding="async">
+          <figcaption>UCF Electrical Engineering Student</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Featured Projects</p>
+          <h2 id="projects-title">A portfolio built around real hardware.</h2>
+          <p>
+            Recruiters should be able to quickly see what I have built, what I tested, and what engineering decisions I had to make along the way.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <figure class="image-slot card-media" data-placeholder="assets/electric-dirt-bike-1.jpg">
+              <img src="assets/electric-dirt-bike-1.jpg" alt="Electric dirt bike conversion project" loading="lazy" decoding="async">
+            </figure>
+            <div class="card-body">
+              <p class="card-kicker">Power + mobility</p>
+              <h3>Electric Dirt Bike Conversion</h3>
+              <p>48V lithium battery, 2000W BLDC motor, controller wiring, throttle integration, troubleshooting, voltage drop, and safety testing.</p>
+              <div class="tag-row">
+                <span>48V</span>
+                <span>BLDC</span>
+                <span>Motor Controller</span>
+              </div>
+              <a class="text-link" href="#electric-dirt-bike">See build details</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <figure class="image-slot card-media" data-placeholder="assets/scooter-build-1.jpg">
+              <img src="assets/scooter-build-1.jpg" alt="Scooter or cooler scooter build" loading="lazy" decoding="async">
+            </figure>
+            <div class="card-body">
+              <p class="card-kicker">Mobility builds</p>
+              <h3>Scooter &amp; Cooler Scooter Builds</h3>
+              <p>Mechanical layout, mounting, wiring, battery placement, controller packaging, and real-world ride testing.</p>
+              <div class="tag-row">
+                <span>Packaging</span>
+                <span>Wiring</span>
+                <span>Testing</span>
+              </div>
+              <a class="text-link" href="#scooter-builds">View scooter builds</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <figure class="image-slot card-media" data-placeholder="assets/cad-print-1.jpg">
+              <img src="assets/cad-print-1.jpg" alt="CAD model or 3D printed prototype" loading="lazy" decoding="async">
+            </figure>
+            <div class="card-body">
+              <p class="card-kicker">Design + fabrication</p>
+              <h3>CAD &amp; 3D Printing</h3>
+              <p>Fusion 360 models, printed brackets, prototype parts, fit checks, tolerances, and mechanical iteration.</p>
+              <div class="tag-row">
+                <span>Fusion 360</span>
+                <span>Prototyping</span>
+                <span>DFM</span>
+              </div>
+              <a class="text-link" href="#cad-printing">Explore designs</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <figure class="image-slot card-media" data-placeholder="assets/lab-breadboard-1.jpg">
+              <img src="assets/lab-breadboard-1.jpg" alt="Breadboard circuit from an electronics lab" loading="lazy" decoding="async">
+            </figure>
+            <div class="card-body">
+              <p class="card-kicker">Labs + circuits</p>
+              <h3>Electronics &amp; Class Labs</h3>
+              <p>Oscilloscope measurements, diode circuits, rectifiers, transistor circuits, AC/DC analysis, and LTspice validation.</p>
+              <div class="tag-row">
+                <span>LTspice</span>
+                <span>Scopes</span>
+                <span>AC/DC</span>
+              </div>
+              <a class="text-link" href="#class-labs">Review lab work</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="shortcut-row reveal" aria-label="Project area shortcuts">
+          <a href="#scooter-builds">Scooter Builds</a>
+          <a href="#cad-printing">CAD &amp; 3D Printing</a>
+          <a href="#electronics">Electronics</a>
+          <a href="#coursework">Coursework Reflections</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section" id="electric-dirt-bike" aria-labelledby="dirt-bike-title">
+      <div class="section-inner">
+        <div class="feature-layout">
+          <div class="feature-copy reveal">
+            <!-- EDIT: Expand this with real measurements, dates, parts, photos, and lessons learned. -->
+            <p class="section-kicker">Strongest Project</p>
+            <h2 id="dirt-bike-title">Electric Dirt Bike Conversion</h2>
+            <p class="lead">
+              Converted a dirt bike to electric drive using a 48V lithium battery, 2000W BLDC motor, motor controller, and throttle system.
             </p>
-            <ul>
-              <li>Power delivery and current draw</li>
-              <li>Controller wiring and troubleshooting</li>
-              <li>Voltage drop, torque, and runtime planning</li>
+            <p>
+              This project required power delivery planning, controller troubleshooting, wiring decisions, mechanical fitment, current draw awareness, torque behavior, voltage drop testing, and safety checks under real load.
+            </p>
+
+            <ul class="check-list">
+              <li>Integrated battery, controller, motor, throttle, wiring, and mounting hardware.</li>
+              <li>Tested electrical behavior under practical ride conditions instead of only bench assumptions.</li>
+              <li>Tracked issues around connectors, heat, controller response, voltage sag, and mechanical packaging.</li>
+              <li>Documented lessons learned so the next revision can be cleaner, safer, and easier to service.</li>
             </ul>
           </div>
-        </article>
 
-        <article class="panel project-card">
-          <!-- Upload scooter-build-1.jpg later -->
-          <div class="photo-placeholder project-image">Add scooter build photo</div>
-          <div class="project-body">
-            <span class="tag cyan">CAD + Fabrication</span>
-            <h3>Scooter / Cooler Scooter Builds</h3>
-            <p>
-              Scooter-related builds, attachments, fit checks, and prototype parts designed around real measurements and real use.
-            </p>
-            <ul>
-              <li>Fusion 360 modeling</li>
-              <li>3D printed prototypes</li>
-              <li>Fit testing and design revisions</li>
-            </ul>
+          <div class="feature-stats reveal" aria-label="Electric dirt bike technical highlights">
+            <div class="stat-card">
+              <span>Battery</span>
+              <strong>48V Lithium</strong>
+              <p>Power source selection, wiring, placement, and safe handling.</p>
+            </div>
+            <div class="stat-card">
+              <span>Motor</span>
+              <strong>2000W BLDC</strong>
+              <p>Torque delivery, controller compatibility, and drive testing.</p>
+            </div>
+            <div class="stat-card">
+              <span>Testing</span>
+              <strong>Real Load</strong>
+              <p>Voltage drop, current behavior, throttle response, and troubleshooting.</p>
+            </div>
           </div>
-        </article>
+        </div>
 
-        <article class="panel project-card">
-          <!-- Upload cad-print-1.jpg later -->
-          <div class="photo-placeholder project-image">Add CAD or print photo</div>
-          <div class="project-body">
-            <span class="tag green">Design + Prototyping</span>
-            <h3>CAD & 3D Printing</h3>
-            <p>
-              Parts, brackets, clamps, holders, test pieces, and prototype revisions made to solve real problems.
-            </p>
-            <ul>
-              <li>Fusion 360</li>
-              <li>3D-print-ready models</li>
-              <li>Prototype testing and improvements</li>
-            </ul>
+        <div class="media-grid feature-media-grid">
+          <figure class="image-slot reveal" data-placeholder="assets/electric-dirt-bike-battery.jpg">
+            <img src="assets/electric-dirt-bike-battery.jpg" alt="48V lithium battery used in the electric dirt bike conversion" loading="lazy" decoding="async">
+            <figcaption>Battery layout</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="assets/electric-dirt-bike-motor.jpg">
+            <img src="assets/electric-dirt-bike-motor.jpg" alt="BLDC motor mounted on the electric dirt bike" loading="lazy" decoding="async">
+            <figcaption>BLDC motor</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="assets/electric-dirt-bike-controller.jpg">
+            <img src="assets/electric-dirt-bike-controller.jpg" alt="Motor controller wiring for the electric dirt bike" loading="lazy" decoding="async">
+            <figcaption>Controller</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="assets/electric-dirt-bike-wiring.jpg">
+            <img src="assets/electric-dirt-bike-wiring.jpg" alt="Wiring and power connections on the electric dirt bike conversion" loading="lazy" decoding="async">
+            <figcaption>Wiring</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scooter-builds" aria-labelledby="scooter-title">
+      <div class="section-inner split-layout reverse">
+        <div class="section-copy reveal">
+          <!-- EDIT: Replace these points with specific scooter build details, dates, parts, and results. -->
+          <p class="section-kicker">Scooter / Cooler Scooter Builds</p>
+          <h2 id="scooter-title">Small vehicles, real engineering tradeoffs.</h2>
+          <p>
+            Scooter and cooler scooter builds are compact systems where wiring, battery placement, mechanical mounting, rider safety, packaging, and serviceability all matter. They are a strong way to show practical engineering judgment because every design decision is visible in the final ride.
+          </p>
+          <div class="detail-list">
+            <div>
+              <strong>Mechanical packaging</strong>
+              <span>Mounting, balance, frame constraints, and ride comfort.</span>
+            </div>
+            <div>
+              <strong>Electrical layout</strong>
+              <span>Battery routing, controller placement, connectors, and wire protection.</span>
+            </div>
+            <div>
+              <strong>Testing loop</strong>
+              <span>Ride, inspect, measure, revise, and document what changed.</span>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===================== PHOTO GALLERY ===================== -->
-    <section id="gallery">
-      <div class="section-intro">
-        <p class="eyebrow">Photo gallery</p>
-        <h2>Work people can actually see.</h2>
-        <p>
-          Add photos here of your builds, lab benches, CAD screenshots, 3D prints, wiring, measurements, and project progress.
-        </p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="photo-placeholder gallery-item">Project photo 1</div>
-        <div class="photo-placeholder gallery-item">Project photo 2</div>
-        <div class="photo-placeholder gallery-item">Lab photo 1</div>
-        <div class="photo-placeholder gallery-item">CAD screenshot</div>
-      </div>
-
-      <p class="edit-note">
-        To add real images: upload them into the assets folder, then replace these placeholder boxes with image tags.
-      </p>
-    </section>
-
-    <!-- ===================== CLASS LABS ===================== -->
-    <section id="labs" class="split">
-      <div>
-        <p class="eyebrow">Class labs</p>
-        <h2>Electronics, circuits, simulations, and testing.</h2>
-        <p>
-          This section is for school lab work that shows real technical growth: breadboards, oscilloscope screenshots,
-          LTspice simulations, measurements, and final results.
-        </p>
-      </div>
-
-      <div class="mini-list">
-        <div class="panel mini">
-          <span class="tag">Simulations</span>
-          <h3>LTspice Circuit Work</h3>
-          <p>Diodes, rectifiers, transistors, waveform analysis, and comparing expected behavior to measured results.</p>
         </div>
 
-        <div class="panel mini">
-          <span class="tag cyan">Bench Testing</span>
-          <h3>Oscilloscope + Breadboard Testing</h3>
-          <p>Function generators, DMMs, oscilloscopes, circuit measurements, and hands-on troubleshooting.</p>
-        </div>
-
-        <div class="panel mini">
-          <span class="tag green">Documentation</span>
-          <h3>Lab Reports + Results</h3>
-          <p>Photos, data, waveforms, observations, and short explanations written for people who want to understand the work.</p>
+        <div class="stacked-media reveal">
+          <figure class="image-slot tall-slot" data-placeholder="assets/scooter-build-1.jpg">
+            <img src="assets/scooter-build-1.jpg" alt="Scooter or cooler scooter build progress" loading="lazy" decoding="async">
+            <figcaption>Scooter build</figcaption>
+          </figure>
+          <figure class="image-slot short-slot" data-placeholder="assets/scooter-cad-1.jpg">
+            <img src="assets/scooter-cad-1.jpg" alt="CAD design related to a scooter build" loading="lazy" decoding="async">
+            <figcaption>Mounting concept</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== COURSEWORK / EXAMS SAFETY SECTION ===================== -->
-    <section id="coursework">
-      <div class="section-intro">
-        <p class="eyebrow">Coursework reflections</p>
-        <h2>School work, explained safely.</h2>
-        <p>
-          This section is for explaining what I’m learning in class without posting restricted materials.
-          I can show my own photos, notes, summaries, and original explanations.
-        </p>
-
-        <div class="coursework-warning">
-          <strong>Important:</strong>
-          Do not publicly upload exams, quizzes, answer keys, professor slides, Canvas files, homework solutions,
-          or lab manuals unless the instructor clearly allows it. Keep this section focused on your own summaries,
-          your own photos, and your own project explanations.
-        </div>
-      </div>
-
-      <div class="project-grid">
-        <article class="panel mini">
-          <h3>Topic: Rectifier Circuits</h3>
-          <p>Explain what half-wave and full-wave rectifiers do, then show your own circuit photos and waveforms.</p>
-        </article>
-        <article class="panel mini">
-          <h3>Topic: Transistor Amplifiers</h3>
-          <p>Show LTspice screenshots, lab measurements, and a short explanation of gain and Q-point behavior.</p>
-        </article>
-        <article class="panel mini">
-          <h3>Topic: Circuit Analysis</h3>
-          <p>Write your own explanation of KCL, KVL, Thevenin/Norton, AC/DC analysis, and what you learned.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===================== BUILD LOG ===================== -->
-    <section id="build-log">
-      <div class="section-intro">
-        <p class="eyebrow">Build log</p>
-        <h2>Progress, failures, fixes, and lessons.</h2>
-        <p>
-          Not every project starts clean. This section shows what I’m working on, what failed,
-          and what I changed to make the next version better.
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="panel mini">
-          <span class="date">Current</span>
-          <h3>Organizing the portfolio</h3>
-          <p>Building this website so projects, labs, photos, and resume work are all in one place.</p>
+    <section class="section tinted-section" id="cad-printing" aria-labelledby="cad-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <!-- EDIT: Add your strongest CAD files, prints, design goals, and before/after iteration notes here. -->
+          <p class="section-kicker">CAD &amp; 3D Printing</p>
+          <h2 id="cad-title">From model to part to revision.</h2>
+          <p>
+            Fusion 360 and 3D printing help me move quickly from a rough idea to a part that can be held, measured, installed, and improved.
+          </p>
         </div>
 
-        <div class="panel mini">
-          <span class="date">Next</span>
-          <h3>Add electric dirt bike photos</h3>
-          <p>Upload motor, battery, controller, wiring, frame, and final build photos.</p>
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <span>01</span>
+            <h3>Model</h3>
+            <p>Define the geometry, constraints, clearances, mounting points, and expected load paths.</p>
+          </article>
+          <article class="process-card reveal">
+            <span>02</span>
+            <h3>Print</h3>
+            <p>Prototype the part, check tolerances, and identify where the real-world fit differs from the model.</p>
+          </article>
+          <article class="process-card reveal">
+            <span>03</span>
+            <h3>Revise</h3>
+            <p>Improve strength, serviceability, print orientation, and installation based on actual testing.</p>
+          </article>
         </div>
 
-        <div class="panel mini">
-          <span class="date">Later</span>
-          <h3>Document failed prototypes</h3>
-          <p>Show bad measurements, broken parts, wiring mistakes, failed prints, and what each one taught me.</p>
+        <div class="media-grid two-column-media">
+          <figure class="image-slot reveal" data-placeholder="assets/cad-print-1.jpg">
+            <img src="assets/cad-print-1.jpg" alt="3D printed part or CAD prototype" loading="lazy" decoding="async">
+            <figcaption>Printed prototype</figcaption>
+          </figure>
+          <figure class="image-slot reveal" data-placeholder="assets/scooter-cad-1.jpg">
+            <img src="assets/scooter-cad-1.jpg" alt="Fusion 360 CAD model for a scooter component" loading="lazy" decoding="async">
+            <figcaption>Fusion 360 model</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== RESUME ===================== -->
-    <section id="resume">
-      <div class="panel resume-card">
-        <p class="eyebrow">Resume</p>
-        <h2>Resume, skills, and technical background.</h2>
-        <p>
-          This section is for recruiters, internship applications, and anyone who wants a quick view of my technical background.
-        </p>
-
-        <div class="skill-cloud">
-          <span>LTspice</span>
-          <span>MATLAB</span>
-          <span>C / C++ / C#</span>
-          <span>Fusion 360</span>
-          <span>3D Printing</span>
-          <span>Oscilloscopes</span>
-          <span>DMMs</span>
-          <span>Function Generators</span>
-          <span>Motor Controllers</span>
-          <span>Excel</span>
-          <span>AC/DC Circuit Analysis</span>
-          <span>Technical Documentation</span>
+    <section class="section" id="class-labs" aria-labelledby="labs-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <!-- EDIT: Add your own lab summaries, original photos, measurement screenshots, and conclusions. -->
+          <p class="section-kicker">Class Labs</p>
+          <h2 id="labs-title">Measurement, validation, and engineering habits.</h2>
+          <p>
+            Lab work is where circuit theory becomes something observable: signals on a scope, component behavior, measurement error, and the difference between an ideal schematic and real hardware.
+          </p>
         </div>
 
-        <!-- RESUME FILE:
-             Put your resume PDF inside the assets folder and name it exactly:
-             Sebastian_Keltz_Resume.pdf
-        -->
-        <div class="button-row">
-          <a class="btn primary" href="assets/Sebastian_Keltz_Resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
-          <a class="btn secondary" href="#contact">Contact Me</a>
-        </div>
+        <div class="lab-grid">
+          <article class="lab-card reveal">
+            <figure class="image-slot compact-slot" data-placeholder="assets/lab-breadboard-1.jpg">
+              <img src="assets/lab-breadboard-1.jpg" alt="Breadboard circuit from an electrical engineering lab" loading="lazy" decoding="async">
+            </figure>
+            <h3>Breadboard Circuits</h3>
+            <p>Built and checked circuits using measured voltages, current paths, and expected component behavior.</p>
+          </article>
 
-        <p class="edit-note">
-          To update the resume: upload a new PDF into the assets folder with the exact same file name:
-          Sebastian_Keltz_Resume.pdf
-        </p>
+          <article class="lab-card reveal">
+            <figure class="image-slot compact-slot" data-placeholder="assets/oscilloscope-1.jpg">
+              <img src="assets/oscilloscope-1.jpg" alt="Oscilloscope waveform measurement" loading="lazy" decoding="async">
+            </figure>
+            <h3>Oscilloscope Measurements</h3>
+            <p>Captured waveforms, compared expected and measured behavior, and used scope data to diagnose circuits.</p>
+          </article>
+
+          <article class="lab-card reveal">
+            <figure class="image-slot compact-slot" data-placeholder="assets/ltspice-rectifier-1.jpg">
+              <img src="assets/ltspice-rectifier-1.jpg" alt="LTspice rectifier simulation screenshot" loading="lazy" decoding="async">
+            </figure>
+            <h3>LTspice Simulations</h3>
+            <p>Simulated rectifiers, AC/DC behavior, and component effects before comparing results to real measurements.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact">
-      <div class="panel contact-card">
-        <p class="eyebrow">Contact</p>
-        <h2>Reach out for internships, projects, or ideas.</h2>
-        <p>
-          Have an internship opportunity, engineering project, build question, or idea?
-          I’m interested in hands-on work involving electrical engineering, CAD, hardware testing,
-          product development, MEP, embedded systems, and real-world troubleshooting.
-        </p>
+    <section class="section electronics-section" id="electronics" aria-labelledby="electronics-title">
+      <div class="section-inner split-layout">
+        <div class="section-copy reveal">
+          <!-- EDIT: Add specific circuits, screenshots, diagrams, or measured results you are allowed to share. -->
+          <p class="section-kicker">Electronics / Circuits</p>
+          <h2 id="electronics-title">Circuits that connect analysis to behavior.</h2>
+          <p>
+            My electronics work includes AC/DC circuit analysis, diode behavior, rectifiers, transistor circuits, breadboard testing, and hardware debugging. I try to show both the schematic-level thinking and the practical details that affect real measurements.
+          </p>
+          <div class="skill-cloud" aria-label="Circuit topics">
+            <span>Diodes</span>
+            <span>Rectifiers</span>
+            <span>Transistors</span>
+            <span>AC/DC Analysis</span>
+            <span>Voltage Drop</span>
+            <span>Current Paths</span>
+            <span>Embedded Systems</span>
+            <span>Hardware Testing</span>
+          </div>
+        </div>
 
-        <div class="contact-links">
-          <a href="mailto:sebastiankeltz@icloud.com">sebastiankeltz@icloud.com</a>
-          <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">LinkedIn</a>
+        <figure class="image-slot portrait-slot reveal" data-placeholder="assets/circuit-test-1.jpg">
+          <img src="assets/circuit-test-1.jpg" alt="Circuit test setup with wiring and measurement equipment" loading="lazy" decoding="async">
+          <figcaption>Circuit test setup</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section tinted-section" id="coursework" aria-labelledby="coursework-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <!-- EDIT: Keep this section focused on your original explanations and permitted project/lab photos. -->
+          <p class="section-kicker">Coursework Reflections</p>
+          <h2 id="coursework-title">What I am learning, in my own words.</h2>
+          <p>
+            This section is for short reflections that explain how class topics connect to the systems I build: power transfer, circuit behavior, measurements, embedded hardware, and design tradeoffs.
+          </p>
+        </div>
+
+        <div class="notice reveal">
+          <h3>Academic integrity note</h3>
+          <p>
+            Do not publicly upload exams, quizzes, answer keys, professor slides, Canvas files, homework solutions, or lab manuals unless you have explicit permission. Keep this area focused on your own summaries, project photos, original explanations, and work you are allowed to share.
+          </p>
+        </div>
+
+        <div class="reflection-grid">
+          <article class="reflection-card reveal">
+            <h3>Circuit Analysis</h3>
+            <p>Summarize how voltage, current, power, impedance, and frequency response show up in your builds and lab measurements.</p>
+          </article>
+          <article class="reflection-card reveal">
+            <h3>Electronics</h3>
+            <p>Explain diode, rectifier, transistor, and small-signal ideas using your own photos and notes from permitted work.</p>
+          </article>
+          <article class="reflection-card reveal">
+            <h3>Embedded Systems</h3>
+            <p>Document hardware testing, signal interfaces, debugging habits, and how software interacts with electrical systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="build-log" aria-labelledby="build-log-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <!-- EDIT: Replace timeline entries with your real build dates, tests, failures, fixes, and results. -->
+          <p class="section-kicker">Build Log</p>
+          <h2 id="build-log-title">Documented progress beats perfect memory.</h2>
+          <p>
+            A simple build log helps recruiters see how I think: what I tried, what failed, how I tested it, and what I changed next.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Phase 01</span>
+            <div>
+              <h3>Plan the system</h3>
+              <p>Define the battery, controller, motor, wiring path, mounting constraints, safety concerns, and first test goals.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Phase 02</span>
+            <div>
+              <h3>Assemble and test</h3>
+              <p>Wire the system, verify connections, test throttle response, inspect heat, and check behavior under controlled conditions.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Phase 03</span>
+            <div>
+              <h3>Troubleshoot under load</h3>
+              <p>Investigate voltage sag, connector issues, controller behavior, mechanical alignment, and any intermittent failures.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Phase 04</span>
+            <div>
+              <h3>Document the revision</h3>
+              <p>Record the final configuration, lessons learned, test results, and changes planned for the next version.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Photo Gallery</p>
+          <h2 id="gallery-title">Real project evidence, easy to scan.</h2>
+          <p>
+            Replace these placeholders with project photos, lab shots, CAD exports, oscilloscope captures, and build details.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="image-slot gallery-item gallery-feature reveal" data-placeholder="assets/electric-dirt-bike-1.jpg">
+            <img src="assets/electric-dirt-bike-1.jpg" alt="Finished or in-progress electric dirt bike conversion" loading="lazy" decoding="async">
+            <figcaption>Dirt bike overview</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/electric-dirt-bike-battery.jpg">
+            <img src="assets/electric-dirt-bike-battery.jpg" alt="Electric dirt bike battery" loading="lazy" decoding="async">
+            <figcaption>Battery</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/electric-dirt-bike-controller.jpg">
+            <img src="assets/electric-dirt-bike-controller.jpg" alt="Electric dirt bike controller" loading="lazy" decoding="async">
+            <figcaption>Controller</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/scooter-build-1.jpg">
+            <img src="assets/scooter-build-1.jpg" alt="Scooter build" loading="lazy" decoding="async">
+            <figcaption>Scooter build</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/scooter-cad-1.jpg">
+            <img src="assets/scooter-cad-1.jpg" alt="Scooter CAD model" loading="lazy" decoding="async">
+            <figcaption>Scooter CAD</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/cad-print-1.jpg">
+            <img src="assets/cad-print-1.jpg" alt="CAD or 3D printed project" loading="lazy" decoding="async">
+            <figcaption>3D print</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/lab-breadboard-1.jpg">
+            <img src="assets/lab-breadboard-1.jpg" alt="Breadboard circuit lab" loading="lazy" decoding="async">
+            <figcaption>Breadboard</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/oscilloscope-1.jpg">
+            <img src="assets/oscilloscope-1.jpg" alt="Oscilloscope waveform measurement" loading="lazy" decoding="async">
+            <figcaption>Oscilloscope</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/ltspice-rectifier-1.jpg">
+            <img src="assets/ltspice-rectifier-1.jpg" alt="LTspice rectifier simulation" loading="lazy" decoding="async">
+            <figcaption>LTspice</figcaption>
+          </figure>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/circuit-test-1.jpg">
+            <img src="assets/circuit-test-1.jpg" alt="Circuit test setup" loading="lazy" decoding="async">
+            <figcaption>Circuit test</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resume-section" id="resume" aria-labelledby="resume-title">
+      <div class="section-inner resume-layout">
+        <div class="section-copy reveal">
+          <!-- EDIT RESUME: Put your PDF at assets/Sebastian_Keltz_Resume.pdf. Keep the filename the same. -->
+          <p class="section-kicker">Resume / Skills</p>
+          <h2 id="resume-title">Built for internship recruiters and engineering teams.</h2>
+          <p>
+            My resume should give the concise version. This site gives the evidence: photos, project details, design decisions, measurements, and the way I approach real engineering problems.
+          </p>
+          <div class="resume-actions">
+            <a class="button button-primary" href="assets/Sebastian_Keltz_Resume.pdf">Open Resume PDF</a>
+            <a class="button button-secondary" href="assets/Sebastian_Keltz_Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <div class="skills-panel reveal" aria-label="Skills">
+          <!-- EDIT: Add, remove, or rename skills to match your actual experience. -->
+          <h3>Technical Skills</h3>
+          <div class="skill-group">
+            <span>Power Systems</span>
+            <span>BLDC Motors</span>
+            <span>Motor Controllers</span>
+            <span>Battery Integration</span>
+            <span>Wiring</span>
+            <span>Oscilloscopes</span>
+            <span>LTspice</span>
+            <span>Fusion 360</span>
+            <span>3D Printing</span>
+            <span>Embedded Systems</span>
+            <span>Breadboarding</span>
+            <span>Hardware Debugging</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-inner contact-layout">
+        <div class="section-copy reveal">
+          <!-- EDIT CONTACT: Replace the email, GitHub, and LinkedIn links below with your real links. -->
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">Interested in internships, hardware projects, and engineering opportunities.</h2>
+          <p>
+            I am building toward engineering roles where hands-on testing, electrical systems, hardware debugging, and practical design work matter.
+          </p>
+        </div>
+
+        <div class="contact-card reveal" aria-label="Contact links">
+          <a href="mailto:sebastian.keltz@example.com">
+            <span>Email</span>
+            <strong>sebastian.keltz@example.com</strong>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <strong>Update with your profile</strong>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            <span>GitHub</span>
+            <strong>Update with your repositories</strong>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    © 2026 Sebastian Keltz. Projects, labs, mistakes, fixes, and everything learned along the way.
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>&copy; <span data-current-year></span> Sebastian Keltz. Electrical Engineering Portfolio.</p>
+      <a href="#home">Back to top</a>
+    </div>
   </footer>
 </body>
 </html>

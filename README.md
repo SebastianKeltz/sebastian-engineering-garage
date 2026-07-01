@@ -26,8 +26,8 @@ assets/
   cad-print-1.jpg
   lab-breadboard-1.jpg
   oscilloscope-1.jpg
-  ltspice-rectifier-1.jpg
   circuit-test-1.jpg
+  scooter-action-1.mp4
 ```
 
 ## Editing Checklist

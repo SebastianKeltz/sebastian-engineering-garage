@@ -57,10 +57,10 @@
           <p class="eyebrow">Hands-on electrical engineering portfolio</p>
           <h1 id="hero-title">Sebastian Keltz</h1>
           <p class="hero-lede">
-            Electrical Engineering student at the University of Central Florida building real hardware across electric mobility, power systems, circuits, CAD, 3D printing, and lab testing.
+            Electrical engineering student at the University of Central Florida building hands-on projects across electric mobility, circuits, CAD, 3D printing, and lab testing.
           </p>
           <p class="hero-detail">
-            I learn by building, testing, breaking, fixing, and documenting projects that connect theory to real electrical and mechanical systems.
+            I learn by building, testing, breaking, fixing, and documenting real systems - from electric dirt bike wiring to circuit measurements and mechanical design tradeoffs.
           </p>
 
           <div class="hero-actions" aria-label="Primary actions">
@@ -87,22 +87,24 @@
 
         <div class="hero-media reveal" aria-label="Featured project photo preview">
           <!-- PHOTO: Upload assets/electric-dirt-bike-1.jpg and this slot will show it automatically. -->
-          <figure class="image-slot hero-photo hero-photo-large" data-placeholder="assets/electric-dirt-bike-1.jpg">
+          <figure class="image-slot hero-feature-card" data-placeholder="assets/electric-dirt-bike-1.jpg">
             <img src="assets/electric-dirt-bike-1.jpg" alt="Electric dirt bike conversion build" fetchpriority="high">
-            <figcaption>Electric Dirt Bike Conversion</figcaption>
+            <figcaption>Featured Build: Electric Dirt Bike Conversion</figcaption>
           </figure>
 
-          <!-- PHOTO: Upload assets/about-me-project.jpg for a garage or project work photo. -->
-          <figure class="image-slot hero-photo hero-photo-small top" data-placeholder="assets/about-me-project.jpg">
-            <img src="assets/about-me-project.jpg" alt="Sebastian working on a hands-on engineering project" loading="lazy" decoding="async">
-            <figcaption>Build Testing</figcaption>
-          </figure>
+          <div class="hero-thumbnail-grid" aria-label="Additional portfolio previews">
+            <!-- PHOTO: Upload assets/about-me-project.jpg for a garage or project work photo. -->
+            <figure class="image-slot hero-thumb" data-placeholder="assets/about-me-project.jpg">
+              <img src="assets/about-me-project.jpg" alt="Sebastian working on a hands-on engineering project" loading="lazy" decoding="async">
+              <figcaption>Build testing</figcaption>
+            </figure>
 
-          <!-- PHOTO: Upload assets/oscilloscope-1.jpg for a lab or measurement photo. -->
-          <figure class="image-slot hero-photo hero-photo-small bottom" data-placeholder="assets/oscilloscope-1.jpg">
-            <img src="assets/oscilloscope-1.jpg" alt="Oscilloscope measurement from an electronics lab" loading="lazy" decoding="async">
-            <figcaption>Lab Measurements</figcaption>
-          </figure>
+            <!-- PHOTO: Upload assets/oscilloscope-1.jpg for a lab or measurement photo. -->
+            <figure class="image-slot hero-thumb" data-placeholder="assets/oscilloscope-1.jpg">
+              <img src="assets/oscilloscope-1.jpg" alt="Oscilloscope measurement from an electronics lab" loading="lazy" decoding="async">
+              <figcaption>Lab measurements</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -292,12 +294,12 @@
           <p class="section-kicker">Scooter / Cooler Scooter Builds</p>
           <h2 id="scooter-title">Small vehicles, real engineering tradeoffs.</h2>
           <p>
-            Scooter and cooler scooter builds are compact systems where wiring, battery placement, mechanical mounting, rider safety, packaging, and serviceability all matter. They are a strong way to show practical engineering judgment because every design decision is visible in the final ride.
+            Scooter and cooler scooter builds are compact systems where wiring, battery placement, mechanical mounting, rider safety, packaging, and serviceability all matter. The project is small, but the engineering decisions are real.
           </p>
           <div class="detail-list">
             <div>
               <strong>Mechanical packaging</strong>
-              <span>Mounting, balance, frame constraints, and ride comfort.</span>
+              <span>Mounting, balance, frame constraints, and rider comfort.</span>
             </div>
             <div>
               <strong>Electrical layout</strong>
@@ -315,12 +317,12 @@
             <img src="assets/scooter-build-1.jpg" alt="Scooter or cooler scooter build progress" loading="lazy" decoding="async">
             <figcaption>Scooter build</figcaption>
           </figure>
-          <figure class="image-slot short-slot" data-placeholder="assets/scooter-cad-1.jpg">
-            <img src="assets/scooter-cad-1.jpg" alt="CAD design related to a scooter build" loading="lazy" decoding="async">
-            <figcaption>Mounting concept</figcaption>
+          <figure class="image-slot short-slot" data-placeholder="assets/about-me.jpg">
+            <img src="assets/about-me.jpg" alt="Cooler scooter build setup and workspace" loading="lazy" decoding="async">
+            <figcaption>Build setup</figcaption>
           </figure>
-                    <figure class="video-card">
-            <!-- VIDEO: Put your MP4 video in assets and name it scooter-action-1.mp4 -->
+          <figure class="video-card">
+            <!-- VIDEO: Add a short MP4 video at assets/scooter-action-1.mp4. Keep it around 5-15 seconds if possible. -->
             <video class="project-video" controls playsinline preload="metadata" poster="assets/scooter-build-1.jpg">
               <source src="assets/scooter-action-1.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -402,11 +404,11 @@
           </article>
 
           <article class="lab-card reveal">
-            <figure class="image-slot compact-slot" data-placeholder="assets/ltspice-rectifier-1.jpg">
-              <img src="assets/ltspice-rectifier-1.jpg" alt="LTspice rectifier simulation screenshot" loading="lazy" decoding="async">
+            <figure class="image-slot compact-slot" data-placeholder="assets/circuit-test-1.jpg">
+              <img src="assets/circuit-test-1.jpg" alt="Hands testing a circuit with a meter" loading="lazy" decoding="async">
             </figure>
-            <h3>LTspice Simulations</h3>
-            <p>Simulated rectifiers, AC/DC behavior, and component effects before comparing results to real measurements.</p>
+            <h3>Circuit Testing</h3>
+            <p>Used meters and test setups to connect circuit analysis to real component behavior and measurement habits.</p>
           </article>
         </div>
       </div>
@@ -447,29 +449,29 @@
           <p class="section-kicker">Coursework Reflections</p>
           <h2 id="coursework-title">What I am learning, in my own words.</h2>
           <p>
-            This section is for short reflections that explain how class topics connect to the systems I build: power transfer, circuit behavior, measurements, embedded hardware, and design tradeoffs.
+            This section connects my coursework to the projects I actually build. I use it to explain circuit behavior, power transfer, measurements, embedded hardware, and design tradeoffs in a way that makes sense outside of just solving homework problems.
           </p>
         </div>
 
         <div class="notice reveal">
           <h3>Academic integrity note</h3>
           <p>
-            Do not publicly upload exams, quizzes, answer keys, professor slides, Canvas files, homework solutions, or lab manuals unless you have explicit permission. Keep this area focused on your own summaries, project photos, original explanations, and work you are allowed to share.
+            This section is for my own summaries, project explanations, and allowed work. I do not post exams, quizzes, answer keys, professor slides, Canvas files, homework solutions, or lab manuals unless I have explicit permission.
           </p>
         </div>
 
         <div class="reflection-grid">
           <article class="reflection-card reveal">
             <h3>Circuit Analysis</h3>
-            <p>Summarize how voltage, current, power, impedance, and frequency response show up in your builds and lab measurements.</p>
+            <p>Connecting voltage, current, impedance, power, and frequency response to real measurements from my builds and labs.</p>
           </article>
           <article class="reflection-card reveal">
             <h3>Electronics</h3>
-            <p>Explain diode, rectifier, transistor, and small-signal ideas using your own photos and notes from permitted work.</p>
+            <p>Explaining diode, rectifier, transistor, and small-signal concepts using my own project photos, circuit tests, and permitted notes.</p>
           </article>
           <article class="reflection-card reveal">
             <h3>Embedded Systems</h3>
-            <p>Document hardware testing, signal interfaces, debugging habits, and how software interacts with electrical systems.</p>
+            <p>Documenting signal interfaces, hardware testing, debugging habits, and how software interacts with electrical systems.</p>
           </article>
         </div>
       </div>
@@ -528,7 +530,7 @@
           <p class="section-kicker">Photo Gallery</p>
           <h2 id="gallery-title">Real project evidence, easy to scan.</h2>
           <p>
-            Replace these placeholders with project photos, lab shots, CAD exports, oscilloscope captures, and build details.
+            A collection of build photos, lab measurements, CAD models, wiring work, and testing moments that show the process behind the finished projects.
           </p>
         </div>
 
@@ -565,9 +567,9 @@
             <img src="assets/oscilloscope-1.jpg" alt="Oscilloscope waveform measurement" loading="lazy" decoding="async">
             <figcaption>Oscilloscope</figcaption>
           </figure>
-          <figure class="image-slot gallery-item reveal" data-placeholder="assets/ltspice-rectifier-1.jpg">
-            <img src="assets/ltspice-rectifier-1.jpg" alt="LTspice rectifier simulation" loading="lazy" decoding="async">
-            <figcaption>LTspice</figcaption>
+          <figure class="image-slot gallery-item reveal" data-placeholder="assets/electric-dirt-bike-wiring.jpg">
+            <img src="assets/electric-dirt-bike-wiring.jpg" alt="Electric dirt bike wiring and power connections" loading="lazy" decoding="async">
+            <figcaption>Wiring</figcaption>
           </figure>
           <figure class="image-slot gallery-item reveal" data-placeholder="assets/circuit-test-1.jpg">
             <img src="assets/circuit-test-1.jpg" alt="Circuit test setup" loading="lazy" decoding="async">
@@ -625,17 +627,17 @@
         </div>
 
         <div class="contact-card reveal" aria-label="Contact links">
-          <a href="mailto:sebastian.keltz@example.com">
+          <a href="mailto:Sebastiankeltz@icloud.com">
             <span>Email</span>
-            <strong>sebastian.keltz@example.com</strong>
+            <strong>Sebastiankeltz@icloud.com</strong>
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+          <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">
             <span>LinkedIn</span>
-            <strong>Update with your profile</strong>
+            <strong>linkedin.com/in/sebastian-keltz-0ab141259</strong>
           </a>
-          <a href="https://github.com/" target="_blank" rel="noopener">
+          <a href="https://github.com/SebastianKeltz" target="_blank" rel="noopener">
             <span>GitHub</span>
-            <strong>Update with your repositories</strong>
+            <strong>github.com/SebastianKeltz</strong>
           </a>
         </div>
       </div>

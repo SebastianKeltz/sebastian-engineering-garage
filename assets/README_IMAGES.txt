@@ -41,8 +41,11 @@ Show wiring, connectors, throttle wiring, power routing, or electrical cleanup.
 scooter-build-1.jpg
 Show a scooter or cooler scooter build in progress or completed.
 
+scooter-action-1.mp4
+Optional short MP4 video of the scooter or cooler scooter moving. Keep it around 5 to 15 seconds and under 25 MB if possible.
+
 scooter-cad-1.jpg
-Show a CAD screenshot, mounting concept, bracket, or scooter design detail.
+Show a CAD screenshot, bracket design, model view, or mechanical design detail.
 
 cad-print-1.jpg
 Show a Fusion 360 model, 3D printed part, prototype, bracket, fixture, or iteration.
@@ -52,9 +55,6 @@ Show a breadboard circuit from a lab or personal electronics test.
 
 oscilloscope-1.jpg
 Show an oscilloscope waveform, measurement setup, or signal test.
-
-ltspice-rectifier-1.jpg
-Show an LTspice simulation screenshot, rectifier plot, or circuit simulation.
 
 circuit-test-1.jpg
 Show a circuit test bench, electronics setup, measurement wiring, or hardware debug photo.

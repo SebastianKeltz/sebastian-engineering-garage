@@ -8,6 +8,11 @@ Put these files at the root of your GitHub Pages repository:
 
 ```text
 index.html
+about.html
+projects.html
+academic.html
+resume.html
+contact.html
 styles.css
 script.js
 README.md
@@ -40,14 +45,15 @@ assets/
 
 ## Editing Checklist
 
-1. Open `index.html` and search for `EDIT:` comments.
-2. Replace the contact email, LinkedIn URL, and GitHub URL near the Contact section.
-3. Edit the case study pages in `projects/` as you collect better measurements, parts, costs, and test results.
-4. Edit `coursework/electronics-labs.html` when approved lab reports are ready to share.
-5. Add future approved report PDFs to `assets/reports/`.
-6. Add your resume PDF at `assets/Sebastian_Keltz_Resume.pdf`.
-7. Add your photos to `assets/` using the filenames listed in `assets/README_IMAGES.txt`.
-8. Keep image files reasonably small for GitHub Pages. A good target is under 500 KB per image when possible.
+1. Keep `index.html` short. It should work as the recruiter-friendly front page.
+2. Edit `projects.html`, `academic.html`, `resume.html`, and `contact.html` for longer information.
+3. Replace the contact email, LinkedIn URL, and GitHub URL in `contact.html` and the footer links.
+4. Edit the case study pages in `projects/` as you collect better measurements, parts, costs, and test results.
+5. Edit `coursework/electronics-labs.html` when approved lab reports are ready to share.
+6. Add future approved report PDFs to `assets/reports/`.
+7. Add your resume PDF at `assets/Sebastian_Keltz_Resume.pdf`.
+8. Add your photos to `assets/` using the filenames listed in `assets/README_IMAGES.txt`.
+9. Keep image files reasonably small for GitHub Pages. A good target is under 500 KB per image when possible.
 
 ## Image Replacement
 

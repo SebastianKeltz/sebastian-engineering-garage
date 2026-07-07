@@ -13,7 +13,7 @@
 
   <header class="site-header" data-header>
     <nav class="nav-shell" aria-label="Project navigation">
-      <a class="brand" href="../index.html#home" aria-label="Sebastian Keltz home">
+      <a class="brand" href="../index.html" aria-label="Sebastian Keltz home">
         <span class="brand-mark">SK</span>
         <span class="brand-text">
           <span>Sebastian Keltz</span>
@@ -28,10 +28,11 @@
       </button>
 
       <ul class="nav-links" id="primary-navigation" data-nav-links>
-        <li><a href="../index.html#projects">Projects</a></li>
-        <li><a href="../index.html#gallery">Gallery</a></li>
-        <li><a href="../index.html#resume">Resume</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../academic.html">Academic Work</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -40,7 +41,7 @@
     <section class="section case-hero">
       <div class="section-inner case-hero-grid">
         <div class="case-hero-copy reveal">
-          <a class="back-link" href="../index.html#projects">&larr; Back to Home</a>
+          <a class="back-link" href="../projects.html">&larr; Back to Projects</a>
           <p class="section-kicker">Project Case Study</p>
           <h1>CAD &amp; 3D Printing for Project Prototyping</h1>
           <p class="hero-lede">
@@ -69,13 +70,13 @@
         </article>
 
         <article class="case-card reveal">
-          <h2>What I Used 3D Printing For</h2>
+          <h2>Engineering Goal</h2>
           <ul class="case-list">
-            <li>Electric dirt bike battery case / support parts.</li>
-            <li>Water bottle mount holder.</li>
-            <li>Mounting brackets and fitment parts.</li>
-            <li>Layout checks before final assembly.</li>
-            <li>Prototype parts that can be revised after testing.</li>
+            <li>Create practical parts for real project constraints.</li>
+            <li>Use CAD to plan clearances, mounting points, and service access.</li>
+            <li>Use 3D printing for fast prototype testing and revision.</li>
+            <li>Connect mechanical design choices to electrical project needs.</li>
+            <li>Document how parts change after fit checks and testing.</li>
           </ul>
         </article>
       </div>
@@ -83,6 +84,17 @@
 
     <section class="section tinted-section">
       <div class="section-inner case-two-column">
+        <article class="case-card reveal">
+          <h3>Materials / Parts Used</h3>
+          <ul class="case-list">
+            <li>3D printed prototype parts.</li>
+            <li>Battery support and packaging concepts.</li>
+            <li>Mounting brackets and fitment parts.</li>
+            <li>Water bottle mount holder.</li>
+            <li>Project hardware used for fit checks.</li>
+          </ul>
+        </article>
+
         <article class="case-card reveal">
           <h3>Tools Used</h3>
           <div class="skill-group">
@@ -95,25 +107,13 @@
           </div>
         </article>
 
-        <article class="case-card reveal">
-          <h3>Engineering Focus</h3>
-          <div class="skill-group">
-            <span>Clearances</span>
-            <span>Mounting Points</span>
-            <span>Strength</span>
-            <span>Print Orientation</span>
-            <span>Serviceability</span>
-            <span>Fit Checks</span>
-            <span>Iteration</span>
-          </div>
-        </article>
       </div>
     </section>
 
     <section class="section case-section" id="process">
       <div class="section-inner">
         <div class="section-heading reveal">
-          <p class="section-kicker">Design Process</p>
+          <p class="section-kicker">Build Process / Timeline</p>
           <h2>From measurement to revision.</h2>
         </div>
 
@@ -130,10 +130,38 @@
     <section class="section tinted-section">
       <div class="section-inner case-two-column">
         <article class="case-card reveal">
+          <h2>Testing and Troubleshooting</h2>
+          <ul class="case-list">
+            <li>Checked printed parts against the actual project hardware.</li>
+            <li>Looked for clearance issues, weak areas, and hard-to-service geometry.</li>
+            <li>Compared CAD assumptions against physical fitment.</li>
+            <li>Revised dimensions when a part did not fit or support the build well enough.</li>
+            <li>Documented what should change before the next print.</li>
+          </ul>
+        </article>
+
+        <article class="case-card reveal">
           <h2>What I Learned</h2>
           <p>
             I learned that a CAD model is only the first version of the idea. The real test happens when the printed part has to fit around wires, hardware, batteries, frames, and real-world constraints.
           </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tinted-section">
+      <div class="section-inner case-two-column">
+        <article class="case-card reveal">
+          <h2>Engineering Focus</h2>
+          <div class="skill-group">
+            <span>Clearances</span>
+            <span>Mounting Points</span>
+            <span>Strength</span>
+            <span>Print Orientation</span>
+            <span>Serviceability</span>
+            <span>Fit Checks</span>
+            <span>Iteration</span>
+          </div>
         </article>
 
         <article class="case-card reveal">
@@ -201,7 +229,7 @@
           <div class="project-link-row">
             <a href="electric-dirt-bike.html">Electric Dirt Bike</a>
             <a href="cooler-scooter.html">Cooler Scooter</a>
-            <a href="../index.html#projects">All Projects</a>
+            <a href="../projects.html">All Projects</a>
           </div>
         </article>
       </div>
@@ -211,7 +239,7 @@
   <footer class="site-footer">
     <div class="section-inner footer-inner">
       <p>&copy; <span data-current-year></span> Sebastian Keltz. Electrical Engineering Portfolio.</p>
-      <a href="../index.html#home">Back to home</a>
+      <a href="../index.html">Back to home</a>
     </div>
   </footer>
 </body>

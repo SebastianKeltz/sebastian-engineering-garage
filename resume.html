@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume page for Sebastian Keltz, UCF Electrical Engineering student focused on hardware projects, circuit testing, CAD, 3D printing, and engineering internships.">
+  <title>Resume | Sebastian Keltz Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Sebastian Keltz home">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">
+          <span>Sebastian Keltz</span>
+          <small>Electrical Engineering | UCF</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primary-navigation" data-nav-links>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="academic.html">Academic Work</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero" aria-labelledby="resume-title">
+      <div class="section-inner page-hero-grid">
+        <div class="section-copy reveal">
+          <!-- EDIT RESUME: Put your current PDF at assets/Sebastian_Keltz_Resume.pdf. -->
+          <p class="section-kicker">Resume</p>
+          <h1 id="resume-title">Resume and engineering qualifications.</h1>
+          <p class="hero-lede">
+            A concise recruiter page for my education, skills, projects, experience, and resume PDF.
+          </p>
+          <p>
+            The full resume PDF should stay updated at the same file path so every button on the site works automatically.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="assets/Sebastian_Keltz_Resume.pdf">Open Resume PDF</a>
+            <a class="button button-secondary" href="assets/Sebastian_Keltz_Resume.pdf" download>Download Resume</a>
+            <a class="button button-ghost" href="contact.html">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="resume-preview-card reveal" aria-label="Resume PDF preview">
+          <h2>Resume PDF</h2>
+          <p>
+            Upload the file below to make the buttons and preview work:
+          </p>
+          <code class="path-pill">assets/Sebastian_Keltz_Resume.pdf</code>
+          <iframe class="resume-frame" src="assets/Sebastian_Keltz_Resume.pdf" title="Sebastian Keltz resume PDF preview"></iframe>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section compact-section tinted-section" aria-labelledby="resume-summary-title">
+      <div class="section-inner resume-page-grid">
+        <article class="resume-info-card reveal">
+          <p class="section-kicker">Education</p>
+          <h2 id="resume-summary-title">University of Central Florida</h2>
+          <p>Electrical Engineering student focused on practical hardware, circuits, testing, CAD, prototyping, and engineering documentation.</p>
+        </article>
+
+        <article class="resume-info-card reveal">
+          <p class="section-kicker">Internship Focus</p>
+          <h2>Hardware, testing, and design roles.</h2>
+          <p>Interested in opportunities involving electrical systems, product testing, embedded or hardware support, CAD/prototyping, lab work, and field-ready troubleshooting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section compact-section" aria-labelledby="skills-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Skills</p>
+          <h2 id="skills-title">Technical skills and project evidence.</h2>
+          <p>
+            Edit these skill groups whenever your resume changes so this page stays aligned with your applications.
+          </p>
+        </div>
+
+        <div class="skills-page-grid">
+          <article class="skills-panel reveal">
+            <h3>Electrical / Hardware</h3>
+            <div class="skill-group">
+              <span>Circuits</span>
+              <span>Wiring</span>
+              <span>Breadboarding</span>
+              <span>Oscilloscope Measurements</span>
+              <span>Digital Multimeters</span>
+              <span>Power Delivery</span>
+              <span>Hardware Debugging</span>
+              <span>BLDC Motors</span>
+              <span>Motor Controllers</span>
+            </div>
+          </article>
+
+          <article class="skills-panel reveal">
+            <h3>Design / Fabrication</h3>
+            <div class="skill-group">
+              <span>Fusion 360</span>
+              <span>3D Printing</span>
+              <span>Prototype Parts</span>
+              <span>Fit Checks</span>
+              <span>Brackets / Mounts</span>
+              <span>Mechanical Packaging</span>
+              <span>Design Iteration</span>
+            </div>
+          </article>
+
+          <article class="skills-panel reveal">
+            <h3>Simulation / Analysis</h3>
+            <div class="skill-group">
+              <span>LTspice</span>
+              <span>Diodes</span>
+              <span>Rectifiers</span>
+              <span>Transistor Circuits</span>
+              <span>AC/DC Analysis</span>
+              <span>Waveform Interpretation</span>
+              <span>Technical Reports</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section tinted-section" aria-labelledby="resume-details-title">
+      <div class="section-inner detail-summary-grid">
+        <article class="detail-summary-card reveal">
+          <h2 id="resume-details-title">Projects</h2>
+          <ul class="case-list">
+            <li>Electric Dirt Bike Conversion: 48V lithium battery, BLDC motor, controller wiring, throttle setup, testing.</li>
+            <li>Cooler Scooter Build: small vehicle layout, mounting, wiring, stability, and iteration.</li>
+            <li>CAD &amp; 3D Printing: Fusion 360 models, prototype brackets, fit checks, and printed parts.</li>
+            <li>Electronics Labs: circuit analysis, simulations, breadboard work, and measurement documentation.</li>
+          </ul>
+        </article>
+
+        <article class="detail-summary-card reveal">
+          <h2>Work Experience</h2>
+          <!-- EDIT: Replace this with your current/past jobs, dates, and measurable accomplishments. -->
+          <p>
+            Add current and past work experience here. Keep each role concise: employer, position, dates, tools used, and measurable impact.
+          </p>
+        </article>
+
+        <article class="detail-summary-card reveal">
+          <h2>Leadership / Relevant Experience</h2>
+          <!-- EDIT: Add clubs, team roles, leadership roles, volunteer work, or project ownership. -->
+          <p>
+            Add leadership experience, team projects, club involvement, mentoring, competition work, or project ownership here.
+          </p>
+        </article>
+
+        <article class="detail-summary-card reveal">
+          <h2>Certifications / Training</h2>
+          <!-- EDIT: Add OSHA, safety, software, technical, or engineering certifications when you have them. -->
+          <p>
+            Add certifications, training, software credentials, or relevant coursework highlights here when they are ready.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>&copy; <span data-current-year></span> Sebastian Keltz. Electrical Engineering Portfolio.</p>
+      <div class="footer-links" aria-label="Professional links">
+        <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SebastianKeltz" target="_blank" rel="noopener">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -31,6 +31,27 @@ if (navToggle && navLinks) {
   });
 }
 
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("mailto:")) return;
+
+  try {
+    const currentPath = window.location.pathname.replace(/\\/g, "/");
+    const targetPath = new URL(href, window.location.href).pathname.replace(/\\/g, "/");
+    const currentFile = currentPath.split("/").pop() || "index.html";
+    const targetFile = targetPath.split("/").pop() || "index.html";
+    const isProjectDetail = currentPath.includes("/projects/") && targetFile === "projects.html";
+    const isCourseworkDetail = currentPath.includes("/coursework/") && targetFile === "academic.html";
+
+    if (currentFile === targetFile || isProjectDetail || isCourseworkDetail) {
+      link.classList.add("is-active");
+    }
+  } catch (error) {
+    // If URL parsing is unavailable, the link still works without active styling.
+  }
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
 

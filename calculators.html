@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Engineering calculators by Sebastian Keltz for Ohm's Law, voltage dividers, LED resistor sizing, RC time constants, battery runtime, voltage drop, unit conversion, and GPA planning.">
+  <title>Engineering Calculators | Sebastian Keltz Electrical Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Sebastian Keltz home">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">
+          <span>Sebastian Keltz</span>
+          <small>Electrical Engineering | UCF</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="primary-navigation" data-nav-links>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="academic.html">Academic Work</a></li>
+        <li><a href="calculators.html">Calculators</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero calculator-page-hero" aria-labelledby="calculators-title">
+      <div class="section-inner page-hero-grid">
+        <div class="section-copy reveal">
+          <p class="section-kicker">Engineering Calculators</p>
+          <h1 id="calculators-title">Engineering calculators for circuits, batteries, wiring, and student planning.</h1>
+          <p class="hero-lede">
+            A practical calculator hub for common electrical engineering formulas, electronics labs, build planning, and quick project checks.
+          </p>
+          <p>
+            The first tools are working now, and the remaining cards create a clean path for future SEO-friendly calculator pages.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#working-calculators">Use Calculators</a>
+            <a class="button button-secondary" href="#calculator-directory">Browse Tools</a>
+            <a class="button button-ghost" href="projects.html">View Projects</a>
+          </div>
+        </div>
+
+        <aside class="calculator-hero-panel reveal" aria-label="Available calculator summary">
+          <p class="card-kicker">Available Now</p>
+          <h2>Four working electrical calculators.</h2>
+          <ul class="calculator-status-list">
+            <li><span>Ohm's Law</span><strong>Live</strong></li>
+            <li><span>Voltage Divider</span><strong>Live</strong></li>
+            <li><span>LED Resistor</span><strong>Live</strong></li>
+            <li><span>RC Time Constant</span><strong>Live</strong></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section compact-section tinted-section" id="calculator-directory" aria-labelledby="calculator-directory-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Calculator Directory</p>
+          <h2 id="calculator-directory-title">Electrical engineering and student calculator cards.</h2>
+          <p>
+            Each card has a focused description so the hub can grow into separate, searchable calculator resources over time.
+          </p>
+        </div>
+
+        <div class="calculator-directory-grid">
+          <article class="calculator-directory-card reveal">
+            <a href="#ohms-law-calculator">
+              <span class="calculator-badge">Working calculator</span>
+              <h3>Ohm's Law Calculator</h3>
+              <p>Calculate voltage, current, or resistance with V = I x R for basic circuit analysis.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#voltage-divider-calculator">
+              <span class="calculator-badge">Working calculator</span>
+              <h3>Voltage Divider Calculator</h3>
+              <p>Find the output voltage from a two-resistor divider using source voltage, R1, and R2.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#led-resistor-calculator">
+              <span class="calculator-badge">Working calculator</span>
+              <h3>LED Resistor Calculator</h3>
+              <p>Size a current-limiting resistor for an LED from supply voltage, LED voltage, and target current.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#rc-time-constant-calculator">
+              <span class="calculator-badge">Working calculator</span>
+              <h3>RC Time Constant Calculator</h3>
+              <p>Calculate the time constant for resistor-capacitor circuits and estimate charge timing.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#battery-runtime-calculator">
+              <span class="calculator-badge calculator-badge-muted">Planned</span>
+              <h3>Battery Runtime Calculator</h3>
+              <p>Estimate battery life using battery capacity, voltage, load current, power draw, and efficiency.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#wire-gauge-voltage-drop-calculator">
+              <span class="calculator-badge calculator-badge-muted">Planned</span>
+              <h3>Wire Gauge / Voltage Drop Calculator</h3>
+              <p>Estimate voltage drop for wires based on current, length, wire gauge, and conductor material.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#unit-conversion-calculator">
+              <span class="calculator-badge calculator-badge-muted">Planned</span>
+              <h3>Unit Conversion Calculator</h3>
+              <p>Convert common electrical, metric, power, energy, and engineering units in one quick place.</p>
+            </a>
+          </article>
+
+          <article class="calculator-directory-card reveal">
+            <a href="#gpa-calculator">
+              <span class="calculator-badge calculator-badge-muted">Planned</span>
+              <h3>GPA Calculator</h3>
+              <p>Plan semester GPA and cumulative GPA using course credits, grades, and current GPA values.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section" id="working-calculators" aria-labelledby="working-calculators-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Working Calculators</p>
+          <h2 id="working-calculators-title">Use these electrical engineering calculators now.</h2>
+          <p>
+            These beginner-friendly tools keep the formulas visible and show results in practical units.
+          </p>
+        </div>
+
+        <div class="calculator-tool-grid">
+          <article class="calculator-tool-card reveal" id="ohms-law-calculator">
+            <div class="calculator-tool-header">
+              <p class="card-kicker">Circuit Analysis</p>
+              <h2>Ohm's Law Calculator</h2>
+              <p>Calculate voltage, current, or resistance using the basic relationship V = I x R.</p>
+            </div>
+
+            <form class="calculator-form" data-calculator-form data-calculator="ohms">
+              <div class="field-grid">
+                <div class="input-group">
+                  <label for="ohms-voltage">Voltage (V)</label>
+                  <input id="ohms-voltage" name="voltage" type="number" step="any" inputmode="decimal" placeholder="12">
+                </div>
+                <div class="input-group">
+                  <label for="ohms-current">Current (A)</label>
+                  <input id="ohms-current" name="current" type="number" step="any" inputmode="decimal" placeholder="0.02">
+                </div>
+                <div class="input-group">
+                  <label for="ohms-resistance">Resistance (ohms)</label>
+                  <input id="ohms-resistance" name="resistance" type="number" step="any" inputmode="decimal" placeholder="600">
+                </div>
+              </div>
+
+              <div class="calculator-actions">
+                <button class="button button-primary" type="submit">Calculate</button>
+                <button class="button button-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+
+            <div class="calculator-result" data-calculator-result aria-live="polite">
+              Enter any two values to solve for the third.
+            </div>
+          </article>
+
+          <article class="calculator-tool-card reveal" id="voltage-divider-calculator">
+            <div class="calculator-tool-header">
+              <p class="card-kicker">Resistor Networks</p>
+              <h2>Voltage Divider Calculator</h2>
+              <p>Calculate the output voltage across R2 in a two-resistor voltage divider circuit.</p>
+            </div>
+
+            <form class="calculator-form" data-calculator-form data-calculator="voltage-divider">
+              <div class="field-grid">
+                <div class="input-group">
+                  <label for="divider-source-voltage">Source voltage (V)</label>
+                  <input id="divider-source-voltage" name="sourceVoltage" type="number" step="any" inputmode="decimal" placeholder="5">
+                </div>
+                <div class="input-group">
+                  <label for="divider-r1">R1 top resistor (ohms)</label>
+                  <input id="divider-r1" name="r1" type="number" step="any" inputmode="decimal" placeholder="10000">
+                </div>
+                <div class="input-group">
+                  <label for="divider-r2">R2 bottom resistor (ohms)</label>
+                  <input id="divider-r2" name="r2" type="number" step="any" inputmode="decimal" placeholder="10000">
+                </div>
+              </div>
+
+              <div class="calculator-actions">
+                <button class="button button-primary" type="submit">Calculate</button>
+                <button class="button button-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+
+            <div class="calculator-result" data-calculator-result aria-live="polite">
+              Output voltage is measured across R2.
+            </div>
+          </article>
+
+          <article class="calculator-tool-card reveal" id="led-resistor-calculator">
+            <div class="calculator-tool-header">
+              <p class="card-kicker">Electronics Design</p>
+              <h2>LED Resistor Calculator</h2>
+              <p>Find a safe current-limiting resistor for one LED or a small series LED string.</p>
+            </div>
+
+            <form class="calculator-form" data-calculator-form data-calculator="led-resistor">
+              <div class="field-grid">
+                <div class="input-group">
+                  <label for="led-supply-voltage">Supply voltage (V)</label>
+                  <input id="led-supply-voltage" name="supplyVoltage" type="number" step="any" inputmode="decimal" placeholder="5">
+                </div>
+                <div class="input-group">
+                  <label for="led-forward-voltage">LED forward voltage (V)</label>
+                  <input id="led-forward-voltage" name="forwardVoltage" type="number" step="any" inputmode="decimal" placeholder="2">
+                </div>
+                <div class="input-group">
+                  <label for="led-current">Target LED current (mA)</label>
+                  <input id="led-current" name="ledCurrent" type="number" step="any" inputmode="decimal" placeholder="20">
+                </div>
+                <div class="input-group">
+                  <label for="led-count">LEDs in series</label>
+                  <input id="led-count" name="ledCount" type="number" step="1" min="1" inputmode="numeric" value="1">
+                </div>
+              </div>
+
+              <div class="calculator-actions">
+                <button class="button button-primary" type="submit">Calculate</button>
+                <button class="button button-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+
+            <div class="calculator-result" data-calculator-result aria-live="polite">
+              Result includes resistor value and estimated resistor power.
+            </div>
+          </article>
+
+          <article class="calculator-tool-card reveal" id="rc-time-constant-calculator">
+            <div class="calculator-tool-header">
+              <p class="card-kicker">Timing Circuits</p>
+              <h2>RC Time Constant Calculator</h2>
+              <p>Calculate resistor-capacitor time constant values for filters, delays, and capacitor charge timing.</p>
+            </div>
+
+            <form class="calculator-form" data-calculator-form data-calculator="rc-time">
+              <div class="field-grid">
+                <div class="input-group">
+                  <label for="rc-resistance">Resistance (ohms)</label>
+                  <input id="rc-resistance" name="resistance" type="number" step="any" inputmode="decimal" placeholder="10000">
+                </div>
+                <div class="input-group">
+                  <label for="rc-capacitance">Capacitance (uF)</label>
+                  <input id="rc-capacitance" name="capacitance" type="number" step="any" inputmode="decimal" placeholder="100">
+                </div>
+              </div>
+
+              <div class="calculator-actions">
+                <button class="button button-primary" type="submit">Calculate</button>
+                <button class="button button-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+
+            <div class="calculator-result" data-calculator-result aria-live="polite">
+              Time constant equals resistance multiplied by capacitance.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section tinted-section" aria-labelledby="planned-calculators-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Future Calculator Pages</p>
+          <h2 id="planned-calculators-title">Planned calculators for batteries, wiring, conversions, and GPA.</h2>
+          <p>
+            These cards reserve clear topics for future interactive pages without breaking the current hub.
+          </p>
+        </div>
+
+        <div class="calculator-tool-grid">
+          <article class="calculator-tool-card calculator-planned-card reveal" id="battery-runtime-calculator">
+            <span class="calculator-badge calculator-badge-muted">Planned expansion</span>
+            <h2>Battery Runtime Calculator</h2>
+            <p>
+              Estimate how long a battery can power a load using amp-hours, watt-hours, voltage, current draw, and real-world efficiency.
+            </p>
+            <p class="formula-note">Future formula focus: runtime = usable battery energy / load power.</p>
+          </article>
+
+          <article class="calculator-tool-card calculator-planned-card reveal" id="wire-gauge-voltage-drop-calculator">
+            <span class="calculator-badge calculator-badge-muted">Planned expansion</span>
+            <h2>Wire Gauge / Voltage Drop Calculator</h2>
+            <p>
+              Estimate voltage drop and percent loss for wiring runs using current, distance, wire size, and conductor resistance.
+            </p>
+            <p class="formula-note">Future formula focus: voltage drop = current x wire resistance.</p>
+          </article>
+
+          <article class="calculator-tool-card calculator-planned-card reveal" id="unit-conversion-calculator">
+            <span class="calculator-badge calculator-badge-muted">Planned expansion</span>
+            <h2>Unit Conversion Calculator</h2>
+            <p>
+              Convert values between common electrical and engineering units such as volts, millivolts, amps, milliamps, watts, and kilowatts.
+            </p>
+            <p class="formula-note">Future focus: quick conversions for labs, projects, and reports.</p>
+          </article>
+
+          <article class="calculator-tool-card calculator-planned-card reveal" id="gpa-calculator">
+            <span class="calculator-badge calculator-badge-muted">Planned expansion</span>
+            <h2>GPA Calculator</h2>
+            <p>
+              Plan semester GPA, cumulative GPA, and target grades using course credits, grade points, and current academic standing.
+            </p>
+            <p class="formula-note">Future formula focus: GPA = total quality points / total credits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section" aria-labelledby="calculator-cta-title">
+      <div class="section-inner cta-panel reveal">
+        <div>
+          <p class="section-kicker">Engineering Garage Resource</p>
+          <h2 id="calculator-cta-title">More calculators can be added as the site grows.</h2>
+          <p>
+            This hub gives the portfolio a practical resource section that can expand into individual calculator pages, tutorials, and project references.
+          </p>
+        </div>
+
+        <div class="cta-actions" aria-label="Calculator page actions">
+          <a class="button button-primary" href="#calculator-directory">Browse All Cards</a>
+          <a class="button button-secondary" href="index.html">Back Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>&copy; <span data-current-year></span> Sebastian Keltz. Electrical Engineering Portfolio.</p>
+      <div class="footer-links" aria-label="Professional links">
+        <a href="https://www.linkedin.com/in/sebastian-keltz-0ab141259/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SebastianKeltz" target="_blank" rel="noopener">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

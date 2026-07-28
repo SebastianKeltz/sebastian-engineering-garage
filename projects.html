@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Engineering projects by Sebastian Keltz, including an electric dirt bike conversion, cooler scooter build, CAD and 3D printing work, and electronics lab projects.">
+  <meta name="description" content="Engineering projects by Sebastian Keltz, including an in-progress ESP32 smart-home monitoring system, electric mobility builds, CAD, and electronics lab work.">
   <title>Projects | Sebastian Keltz Engineering Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -45,7 +45,7 @@
           <p class="section-kicker">Projects</p>
           <h1 id="projects-title">Hands-on engineering work, organized for quick review.</h1>
           <p class="hero-lede">
-            These projects show how I approach electrical systems, mechanical packaging, CAD, 3D printing, circuit testing, and practical troubleshooting.
+            These projects show how I approach embedded systems, electrical power, mechanical packaging, CAD, circuit testing, and practical troubleshooting.
           </p>
           <p>
             Each project is written to be easy for recruiters and engineering teams to scan: what I built, what tools I used, what problems I solved, and what I learned.
@@ -65,11 +65,34 @@
           <p class="section-kicker">Project Cards</p>
           <h2 id="project-cards-title">Major portfolio projects.</h2>
           <p>
-            The cards below give a fast recruiter-friendly summary. Use the buttons to open the deeper case-study pages.
+            The ESP32 system is actively under development; completed and planned work is separated clearly in its case study.
           </p>
         </div>
 
         <div class="project-grid project-grid-wide">
+          <article class="project-card project-card-link featured-project-card reveal">
+            <a class="project-card-anchor" href="projects/esp32-smart-home.html">
+              <figure class="image-slot card-media" data-placeholder="assets/esp32-overview.jpg — add a clear photo of the current ESP32-S3 and BME280 breadboard setup">
+                <img src="assets/esp32-overview.jpg" alt="ESP32-S3 smart-home monitoring system breadboard setup" loading="lazy" decoding="async">
+              </figure>
+              <div class="card-body">
+                <div class="card-heading-row">
+                  <p class="card-kicker">Embedded Systems</p>
+                  <span class="status-badge">In Progress</span>
+                </div>
+                <h3>ESP32 Smart-Home Monitoring System</h3>
+                <p>Firmware and BME280 sensing are verified. Additional sensors, PWM fan control, and a local dashboard remain in development.</p>
+                <div class="mini-meta">
+                  <strong>Verified</strong>
+                  <span>ESP32-S3, serial diagnostics, PSRAM, I²C at 0x76, live environmental readings.</span>
+                  <strong>Tools</strong>
+                  <span>Arduino IDE, C++, I²C, BME280, LTspice.</span>
+                </div>
+                <span class="text-link">View In-Progress Case Study</span>
+              </div>
+            </a>
+          </article>
+
           <article class="project-card project-card-link reveal">
             <a class="project-card-anchor" href="projects/electric-dirt-bike.html">
               <figure class="image-slot card-media" data-placeholder="assets/electric-dirt-bike-1.jpg">
@@ -164,6 +187,20 @@
         </div>
 
         <div class="detail-summary-grid">
+          <article class="detail-summary-card featured-detail-card reveal">
+            <div class="card-heading-row">
+              <h3>ESP32 Smart-Home Monitoring System</h3>
+              <span class="status-badge">In Progress</span>
+            </div>
+            <dl class="detail-list">
+              <div><dt>Overview</dt><dd>ESP32-S3 environmental monitor with verified BME280 sensing, serial diagnostics, and planned local control features.</dd></div>
+              <div><dt>Verified Work</dt><dd>Firmware upload, flash and PSRAM checks, serial commands, JSON state output, I²C detection at 0x76, and live readings.</dd></div>
+              <div><dt>Fan Simulation</dt><dd>LTspice showed about 551 V without flyback protection and about 12.4 V with protection.</dd></div>
+              <div><dt>In Development</dt><dd>BH1750, PIR and door sensors, PWM fan control, automatic logic, local dashboard, and long-duration testing.</dd></div>
+            </dl>
+            <a class="button button-primary" href="projects/esp32-smart-home.html">Open case study</a>
+          </article>
+
           <article class="detail-summary-card reveal">
             <h3>Electric Dirt Bike Conversion</h3>
             <dl class="detail-list">

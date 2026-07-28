@@ -64,6 +64,20 @@ Show an oscilloscope waveform, measurement setup, or signal test.
 circuit-test-1.jpg
 Show a circuit test bench, electronics setup, measurement wiring, or hardware debug photo.
 
+ESP32 Smart-Home Project
+------------------------
+esp32-overview.jpg
+Show the current ESP32-S3 and BME280 breadboard setup clearly. Do not stage unfinished sensors as complete.
+
+esp32-bme280-wiring.jpg
+Show the BME280 power, ground, GPIO 8 SDA, and GPIO 9 SCL connections in a readable close-up.
+
+esp32-serial-readings.jpg
+Show Serial Monitor with BME280 address 0x76 and live temperature, humidity, and pressure readings.
+
+esp32-ltspice-flyback.jpg
+Show the LTspice drain-voltage comparison: approximately 551 V without flyback protection and 12.4 V with protection.
+
 Photo Tips
 ----------
 - Crop photos so the subject is obvious.

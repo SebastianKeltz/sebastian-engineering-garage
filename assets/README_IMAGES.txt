@@ -67,16 +67,25 @@ Show a circuit test bench, electronics setup, measurement wiring, or hardware de
 ESP32 Smart-Home Project
 ------------------------
 esp32-overview.jpg
-Show the current ESP32-S3 and BME280 breadboard setup clearly. Do not stage unfinished sensors as complete.
+Complete ESP32-S3 breadboard setup with the current connected sensors. The broader smart-home system remains in progress.
 
 esp32-bme280-wiring.jpg
-Show the BME280 power, ground, GPIO 8 SDA, and GPIO 9 SCL connections in a readable close-up.
+Close-up of the BME280 wiring: VIN to 3.3 V, GND to GND, SDA to GPIO 8, and SCL to GPIO 9.
 
 esp32-serial-readings.jpg
-Show Serial Monitor with BME280 address 0x76 and live temperature, humidity, and pressure readings.
+Serial Monitor status confirming the BME280 connection and no reported faults.
+
+esp32-pir-wiring.jpg
+Close-up of the PIR motion-sensor wiring, with the sensor output connected to GPIO 4.
+
+esp32-motion-detected.jpg
+Serial Monitor status showing the PIR result changing to motion detected.
 
 esp32-ltspice-flyback.jpg
-Show the LTspice drain-voltage comparison: approximately 551 V without flyback protection and 12.4 V with protection.
+LTspice fan-driver simulation with a flyback diode: maximum simulated MOSFET drain voltage approximately 12.8 V.
+
+esp32-ltspice-no-flyback.jpg
+LTspice fan-driver simulation without a flyback diode: simulated MOSFET drain spike approximately 550.73 V.
 
 Photo Tips
 ----------

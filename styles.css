@@ -894,6 +894,99 @@ ul {
   min-height: 360px;
 }
 
+.technical-media-grid {
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.technical-image-card {
+  display: flex;
+  min-height: 0;
+  align-self: start;
+  flex-direction: column;
+  background: #030a14;
+}
+
+.technical-image-card::before,
+.esp32-card-media::before {
+  display: none;
+}
+
+.technical-image-card img {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  transform: none;
+}
+
+.technical-image-card.missing-image img {
+  display: none;
+}
+
+.technical-image-card figcaption {
+  position: static;
+  z-index: auto;
+  display: flex;
+  max-width: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem 1rem;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+  padding: 0.72rem 0.8rem;
+  backdrop-filter: none;
+}
+
+.technical-image-card:hover img,
+.esp32-card-media:hover img {
+  transform: none;
+}
+
+.media-full-link {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 0.78rem;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.media-full-link:hover,
+.media-full-link:focus-visible {
+  color: var(--text);
+}
+
+.motion-monitor-card img {
+  width: min(100%, 365px);
+  margin: 0 auto;
+}
+
+.serial-monitor-card {
+  align-self: center;
+}
+
+.simulation-summary {
+  gap: 1rem;
+}
+
+.simulation-media-grid {
+  margin-top: 1rem;
+}
+
+.esp32-card-media img {
+  object-fit: contain;
+  opacity: 1;
+  background: #030a14;
+}
+
+.featured-project-card .esp32-card-media {
+  min-height: 340px;
+}
+
 .lab-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1743,8 +1836,7 @@ ul {
 }
 
 .case-card code,
-.info-card code,
-.image-checklist-grid code {
+.info-card code {
   color: #bfdbfe;
   font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
   overflow-wrap: anywhere;
@@ -1794,18 +1886,6 @@ ul {
 
 .simulation-result-safe strong {
   color: #86efac;
-}
-
-.image-checklist-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.esp32-placeholder::before {
-  max-width: 540px;
-  margin: auto;
-  line-height: 1.5;
 }
 
 .reveal {
@@ -2093,9 +2173,13 @@ ul {
     text-align: center;
   }
 
-  .simulation-results,
-  .image-checklist-grid {
+  .simulation-results {
     grid-template-columns: 1fr;
+  }
+
+  .technical-image-card figcaption {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 

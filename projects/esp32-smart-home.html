@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="In-progress ESP32 smart-home monitoring system by Sebastian Keltz, featuring verified BME280 sensing, Arduino C++ firmware, serial diagnostics, and LTspice fan-driver analysis.">
+  <meta name="description" content="In-progress ESP32 smart-home monitoring system by Sebastian Keltz, featuring verified BME280 sensing, GPIO 4 PIR motion detection, Arduino C++ firmware, serial diagnostics, and LTspice fan-driver analysis.">
   <title>ESP32 Smart-Home Monitoring System | Sebastian Keltz</title>
   <link rel="stylesheet" href="../styles.css">
   <script src="../script.js" defer></script>
@@ -52,7 +52,7 @@
             An ESP32-S3 platform for environmental sensing, serial diagnostics, and planned local automation.
           </p>
           <p>
-            The controller, firmware upload path, serial interface, flash, PSRAM, and BME280 sensor are verified. Additional sensors, physical fan control, automatic logic, and the dashboard remain under development.
+            The controller, firmware upload path, serial interface, flash, PSRAM, BME280 sensor, and GPIO 4 PIR motion input are verified. Additional sensors, physical fan control, automatic logic, and the dashboard remain under development.
           </p>
           <div class="tag-row" aria-label="Project technologies">
             <span>ESP32-S3</span>
@@ -60,18 +60,22 @@
             <span>C++</span>
             <span>I²C</span>
             <span>BME280</span>
+            <span>PIR Motion</span>
             <span>LTspice</span>
           </div>
           <div class="case-actions">
             <a class="button button-primary" href="#verified-work">Verified Work</a>
             <a class="button button-secondary" href="#development">In Development</a>
-            <a class="button button-ghost" href="#image-checklist">Image Checklist</a>
+            <a class="button button-ghost" href="#simulation-title">Simulation Results</a>
           </div>
         </div>
 
-        <figure class="image-slot case-hero-image esp32-placeholder reveal" data-placeholder="assets/esp32-overview.jpg — add a clear photo of the current ESP32-S3 and BME280 breadboard setup">
-          <img src="../assets/esp32-overview.jpg" alt="Current ESP32-S3 smart-home monitoring breadboard setup" fetchpriority="high">
-          <figcaption>Current ESP32-S3 hardware setup</figcaption>
+        <figure class="image-slot technical-image-card case-hero-image reveal">
+          <img src="../assets/esp32-overview.jpg" alt="Complete ESP32-S3 smart-home monitoring breadboard with connected environmental and PIR sensors" width="1200" height="1600" fetchpriority="high" decoding="async">
+          <figcaption>
+            <span>Complete ESP32-S3 breadboard setup</span>
+            <a class="media-full-link" href="../assets/esp32-overview.jpg" target="_blank" rel="noopener">View full size</a>
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -82,7 +86,7 @@
           <p class="section-kicker">Project Overview</p>
           <h2 id="overview-title">Objective</h2>
           <p>
-            Build a modular monitoring platform that reads environmental data, reports system state clearly, and provides a foundation for future motion, door, fan, and dashboard functions.
+            Build a modular monitoring platform that reads environmental and motion data, reports system state clearly, and provides a foundation for future door, fan, and dashboard functions.
           </p>
           <p>
             Development is staged so each sensor, output, and protection circuit can be checked independently before full-system integration.
@@ -114,7 +118,7 @@
 
         <div class="architecture-stack">
           <div class="architecture-flow reveal" aria-label="Monitoring path: sensors to ESP32 firmware to planned local dashboard">
-            <span class="flow-node">Environmental sensors</span>
+            <span class="flow-node">Environmental and motion sensors</span>
             <span class="flow-arrow" aria-hidden="true">&rarr;</span>
             <span class="flow-node">ESP32-S3 firmware</span>
             <span class="flow-arrow" aria-hidden="true">&rarr;</span>
@@ -155,6 +159,7 @@
             <ul class="case-list">
               <li>Connected over I²C</li>
               <li>Detected at address <code>0x76</code></li>
+              <li>VIN connected to 3.3 V and GND connected to GND</li>
               <li>SDA on GPIO 8 and SCL on GPIO 9</li>
               <li>Live temperature, humidity, and pressure readings verified</li>
             </ul>
@@ -164,21 +169,56 @@
             <h3>Fan-Driver Analysis</h3>
             <ul class="case-list">
               <li>MOSFET-controlled 12 V fan circuit simulated in LTspice</li>
-              <li>Approximately 551 V drain transient without flyback protection</li>
-              <li>Approximately 12.4 V maximum with flyback protection</li>
+              <li>Approximately 550.73 V drain transient without flyback protection</li>
+              <li>Approximately 12.8 V maximum with flyback protection</li>
               <li>Physical fan-driver assembly is not yet complete</li>
             </ul>
           </article>
         </div>
 
-        <div class="media-grid two-column-media">
-          <figure class="image-slot esp32-placeholder reveal" data-placeholder="assets/esp32-bme280-wiring.jpg — add a close-up showing BME280 power, ground, SDA on GPIO 8, and SCL on GPIO 9">
-            <img src="../assets/esp32-bme280-wiring.jpg" alt="BME280 wiring to the ESP32-S3 using GPIO 8 for SDA and GPIO 9 for SCL" loading="lazy" decoding="async">
-            <figcaption>BME280 I²C wiring</figcaption>
+        <div class="media-grid two-column-media technical-media-grid">
+          <figure class="image-slot technical-image-card reveal">
+            <img src="../assets/esp32-bme280-wiring.jpg" alt="Close-up of the BME280 breakout and its VIN, GND, SCL, and SDA wiring on the ESP32-S3 breadboard" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption>
+              <span>BME280 wiring: VIN to 3.3 V, GND to GND, SDA to GPIO 8, and SCL to GPIO 9</span>
+              <a class="media-full-link" href="../assets/esp32-bme280-wiring.jpg" target="_blank" rel="noopener">View full size</a>
+            </figcaption>
           </figure>
-          <figure class="image-slot esp32-placeholder reveal" data-placeholder="assets/esp32-serial-readings.jpg — add a Serial Monitor screenshot showing address 0x76 and live environmental readings">
-            <img src="../assets/esp32-serial-readings.jpg" alt="ESP32 Serial Monitor showing BME280 detection and environmental readings" loading="lazy" decoding="async">
-            <figcaption>Verified serial diagnostics and readings</figcaption>
+          <figure class="image-slot technical-image-card serial-monitor-card reveal">
+            <img src="../assets/esp32-serial-readings.jpg" alt="Cropped Arduino Serial Monitor status showing the BME280 connected with no reported faults" width="280" height="68" loading="lazy" decoding="async">
+            <figcaption>
+              <span>BME280 connection confirmed through the serial interface</span>
+              <a class="media-full-link" href="../assets/esp32-serial-readings.jpg" target="_blank" rel="noopener">View full size</a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section" aria-labelledby="pir-validation-title">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Hardware Validation</p>
+          <h2 id="pir-validation-title">PIR Motion Sensor Validation</h2>
+          <p>
+            The PIR motion sensor output was connected to GPIO 4 and successfully tested through the serial interface. The motion-detection result confirms that the ESP32 can read changes in the PIR output while the broader smart-home system remains in progress.
+          </p>
+        </div>
+
+        <div class="media-grid two-column-media technical-media-grid">
+          <figure class="image-slot technical-image-card reveal">
+            <img src="../assets/esp32-pir-wiring.jpg" alt="Close-up of the wired PIR motion sensor module connected to the ESP32-S3 breadboard" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption>
+              <span>PIR sensor output wired to GPIO 4</span>
+              <a class="media-full-link" href="../assets/esp32-pir-wiring.jpg" target="_blank" rel="noopener">View full size</a>
+            </figcaption>
+          </figure>
+          <figure class="image-slot technical-image-card motion-monitor-card reveal">
+            <img src="../assets/esp32-motion-detected.jpg" alt="Arduino Serial Monitor status changing from motion not detected to motion detected during PIR testing" width="365" height="693" loading="lazy" decoding="async">
+            <figcaption>
+              <span>Motion detection successfully reported through the serial interface</span>
+              <a class="media-full-link" href="../assets/esp32-motion-detected.jpg" target="_blank" rel="noopener">View full size</a>
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -215,7 +255,7 @@
               <tr>
                 <td>PIR motion input</td>
                 <td>GPIO 4</td>
-                <td>Assigned; hardware testing planned</td>
+                <td>Physically connected and verified through serial testing</td>
               </tr>
               <tr>
                 <td>Door sensor input</td>
@@ -248,7 +288,8 @@
             <li>Serial diagnostic commands</li>
             <li>System-state reporting for readable hardware checks</li>
             <li>BME280 initialization, detection, and live sampling</li>
-            <li>Pin assignments reserved for planned inputs and fan output</li>
+            <li>PIR input monitoring and serial motion-event reporting on GPIO 4</li>
+            <li>Pin assignments reserved for remaining planned inputs and fan output</li>
           </ul>
         </article>
 
@@ -257,11 +298,13 @@
           <h2>Remaining integration work</h2>
           <ul class="case-list case-list-planned">
             <li>BH1750 ambient-light sensor</li>
-            <li>PIR motion sensor hardware test</li>
+            <li>Integrating verified PIR motion events into automatic behavior</li>
             <li>Door sensor hardware test</li>
             <li>PWM fan control and automatic temperature logic</li>
             <li>Physical MOSFET fan-driver assembly and 12 V fan test</li>
             <li>Local dashboard</li>
+            <li>Enclosure construction</li>
+            <li>Complete combined smart-home operation</li>
             <li>Long-duration system testing</li>
           </ul>
         </article>
@@ -269,58 +312,41 @@
     </section>
 
     <section class="section compact-section tinted-section" aria-labelledby="simulation-title">
-      <div class="section-inner case-two-column">
-        <article class="case-card reveal">
+      <div class="section-inner">
+        <article class="case-card simulation-summary reveal">
           <p class="section-kicker">LTspice Comparison</p>
           <h2 id="simulation-title">Flyback protection limits the transient.</h2>
           <div class="simulation-results" aria-label="Simulated maximum MOSFET drain voltage comparison">
             <div class="simulation-result simulation-result-warning">
               <span>Without flyback protection</span>
-              <strong>&asymp; 551 V</strong>
+              <strong>&asymp; 550.73 V</strong>
             </div>
             <div class="simulation-result simulation-result-safe">
               <span>With flyback protection</span>
-              <strong>&asymp; 12.4 V</strong>
+              <strong>&asymp; 12.8 V</strong>
             </div>
           </div>
           <p>
-            The comparison shows why a switching path for an inductive load needs flyback protection. When the fan current is interrupted, stored magnetic energy can drive the MOSFET drain far above the 12 V supply unless the transient has a controlled path.
+            With the flyback diode, the simulated MOSFET drain voltage remained near the 12 V supply and reached a maximum of approximately 12.8 V. Without the diode, the fan's inductive switching spike reached approximately 550.73 V. The comparison demonstrates why the flyback diode is needed to protect the MOSFET.
           </p>
           <p>The physical MOSFET fan-driver and 12 V fan have not yet been assembled or tested.</p>
         </article>
 
-        <figure class="image-slot case-hero-image esp32-placeholder reveal" data-placeholder="assets/esp32-ltspice-flyback.jpg — add the LTspice waveform comparison for the approximately 551 V and 12.4 V results">
-          <img src="../assets/esp32-ltspice-flyback.jpg" alt="LTspice comparison of MOSFET drain voltage with and without flyback protection" loading="lazy" decoding="async">
-          <figcaption>LTspice flyback-protection comparison</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section compact-section" id="image-checklist" aria-labelledby="images-title">
-      <div class="section-inner">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Image Checklist</p>
-          <h2 id="images-title">Files to add when documentation is ready.</h2>
-          <p>Drop each image into the existing <code>assets</code> folder with the exact filename. The placeholder will replace itself automatically.</p>
-        </div>
-
-        <div class="image-checklist-grid">
-          <article class="case-card reveal">
-            <code>assets/esp32-overview.jpg</code>
-            <p>Clear overview of the current ESP32-S3 and BME280 breadboard setup.</p>
-          </article>
-          <article class="case-card reveal">
-            <code>assets/esp32-bme280-wiring.jpg</code>
-            <p>Close-up of power, ground, GPIO 8 SDA, and GPIO 9 SCL connections.</p>
-          </article>
-          <article class="case-card reveal">
-            <code>assets/esp32-serial-readings.jpg</code>
-            <p>Serial Monitor showing BME280 address <code>0x76</code> and live environmental readings.</p>
-          </article>
-          <article class="case-card reveal">
-            <code>assets/esp32-ltspice-flyback.jpg</code>
-            <p>LTspice comparison showing approximately 551 V without protection and 12.4 V with protection.</p>
-          </article>
+        <div class="media-grid two-column-media technical-media-grid simulation-media-grid">
+          <figure class="image-slot technical-image-card reveal">
+            <img src="../assets/esp32-ltspice-flyback.jpg" alt="LTspice protected fan-driver waveform and netlist with a flyback diode installed" width="1600" height="809" loading="lazy" decoding="async">
+            <figcaption>
+              <span>With flyback diode: maximum simulated drain voltage approximately 12.8 V</span>
+              <a class="media-full-link" href="../assets/esp32-ltspice-flyback.jpg" target="_blank" rel="noopener">View full size</a>
+            </figcaption>
+          </figure>
+          <figure class="image-slot technical-image-card reveal">
+            <img src="../assets/esp32-ltspice-no-flyback.jpg" alt="LTspice fan-driver waveform and netlist for the simulation without a flyback diode" width="1177" height="1294" loading="lazy" decoding="async">
+            <figcaption>
+              <span>Without flyback diode: simulated drain spike approximately 550.73 V</span>
+              <a class="media-full-link" href="../assets/esp32-ltspice-no-flyback.jpg" target="_blank" rel="noopener">View full size</a>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -329,8 +355,8 @@
       <div class="section-inner cta-panel reveal">
         <div>
           <p class="section-kicker">Project Status</p>
-          <h2>Hardware integration continues.</h2>
-          <p>The next milestone is to validate the remaining sensor inputs and assemble the protected 12 V fan-control hardware before dashboard work.</p>
+          <h2>Sensor validation advances; system integration continues.</h2>
+          <p>The BME280 and GPIO 4 PIR input are now individually verified. Next steps include validating the remaining sensor inputs, assembling the protected 12 V fan-control hardware, and continuing dashboard integration.</p>
         </div>
         <div class="cta-actions">
           <a class="button button-primary" href="../projects.html">All Projects</a>

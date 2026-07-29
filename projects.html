@@ -72,8 +72,8 @@
         <div class="project-grid project-grid-wide">
           <article class="project-card project-card-link featured-project-card reveal">
             <a class="project-card-anchor" href="projects/esp32-smart-home.html">
-              <figure class="image-slot card-media" data-placeholder="assets/esp32-overview.jpg — add a clear photo of the current ESP32-S3 and BME280 breadboard setup">
-                <img src="assets/esp32-overview.jpg" alt="ESP32-S3 smart-home monitoring system breadboard setup" loading="lazy" decoding="async">
+              <figure class="image-slot card-media esp32-card-media">
+                <img src="assets/esp32-overview.jpg" alt="ESP32-S3 smart-home monitoring breadboard with connected environmental and PIR sensors" width="1200" height="1600" loading="lazy" decoding="async">
               </figure>
               <div class="card-body">
                 <div class="card-heading-row">
@@ -81,10 +81,10 @@
                   <span class="status-badge">In Progress</span>
                 </div>
                 <h3>ESP32 Smart-Home Monitoring System</h3>
-                <p>Firmware and BME280 sensing are verified. Additional sensors, PWM fan control, and a local dashboard remain in development.</p>
+                <p>Firmware, BME280 sensing, and GPIO 4 PIR detection are verified. Additional sensors, PWM fan control, and a local dashboard remain in development.</p>
                 <div class="mini-meta">
                   <strong>Verified</strong>
-                  <span>ESP32-S3, serial diagnostics, PSRAM, I²C at 0x76, live environmental readings.</span>
+                  <span>ESP32-S3, serial diagnostics, PSRAM, BME280 I²C at 0x76, live environmental readings, and GPIO 4 PIR detection.</span>
                   <strong>Tools</strong>
                   <span>Arduino IDE, C++, I²C, BME280, LTspice.</span>
                 </div>
@@ -193,10 +193,10 @@
               <span class="status-badge">In Progress</span>
             </div>
             <dl class="detail-list">
-              <div><dt>Overview</dt><dd>ESP32-S3 environmental monitor with verified BME280 sensing, serial diagnostics, and planned local control features.</dd></div>
-              <div><dt>Verified Work</dt><dd>Firmware upload, flash and PSRAM checks, serial commands, JSON state output, I²C detection at 0x76, and live readings.</dd></div>
-              <div><dt>Fan Simulation</dt><dd>LTspice showed about 551 V without flyback protection and about 12.4 V with protection.</dd></div>
-              <div><dt>In Development</dt><dd>BH1750, PIR and door sensors, PWM fan control, automatic logic, local dashboard, and long-duration testing.</dd></div>
+              <div><dt>Overview</dt><dd>ESP32-S3 environmental and motion monitor with verified BME280 sensing, GPIO 4 PIR detection, serial diagnostics, and planned local control features.</dd></div>
+              <div><dt>Verified Work</dt><dd>Firmware upload, flash and PSRAM checks, serial commands, I²C detection at 0x76, live readings, and PIR motion events reported through the serial interface.</dd></div>
+              <div><dt>Fan Simulation</dt><dd>LTspice measured approximately 550.73 V without flyback protection and 12.8 V with protection.</dd></div>
+              <div><dt>In Development</dt><dd>BH1750 and door-sensor integration, PWM fan control, automatic logic, enclosure construction, a local dashboard, and long-duration testing.</dd></div>
             </dl>
             <a class="button button-primary" href="projects/esp32-smart-home.html">Open case study</a>
           </article>

@@ -12,7 +12,7 @@ Important:
 
 Resume
 ------
-Sebastian_Keltz_Resume.pdf
+Sebastian-Keltz-Resume.pdf
 The resume buttons in index.html already link to this file.
 
 Reports

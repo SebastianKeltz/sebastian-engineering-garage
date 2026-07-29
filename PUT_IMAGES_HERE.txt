@@ -13,7 +13,7 @@ The most important files are:
 1. index.html = homepage
 2. styles.css = website design
 3. script.js = mobile menu
-4. assets/Sebastian_Keltz_Resume.pdf = resume link
+4. assets/Sebastian-Keltz-Resume.pdf = resume link
 
 How to publish with GitHub Pages:
 1. Upload the files to your repository.

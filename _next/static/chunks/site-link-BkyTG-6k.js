@@ -1,0 +1,1 @@
+import{r as e}from"./framework-JGc2HF7T.js";var t=`/sebastian-engineering-garage`;`${t}`;function n(e){return`${t}${e}`}var r=e();function i({href:e,...t}){if(e?.startsWith(`/`)&&!e.startsWith(`//`)){let[,t,r]=e.match(/^([^?#]*)(.*)$/);e=n(`${t.endsWith(`/`)?t:`${t}/`}${r}`)}return(0,r.jsx)(`a`,{...t,href:e})}export{t as n,n as r,i as t};
